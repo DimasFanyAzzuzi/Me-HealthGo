@@ -28,17 +28,33 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="artikel.php"> 
+              <a class="nav-link" href="#navbar-artikel" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
                 <i class="ni ni-ungroup text-orange"></i>
-                <span class="nav-link-text">Daftar Artikel</span>
+                <span class="nav-link-text">Data Artikel </span>
               </a>
+              <div class="collapse" id="navbar-artikel">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="artikel.php" class="nav-link">
+                      <span class="sidenav-mini-icon"> D </span>
+                      <span class="sidenav-normal"> Daftar Artikel </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="gambar-artikel.php" class="nav-link">
+                      <span class="sidenav-mini-icon"> E </span>
+                      <span class="sidenav-normal"> Daftar Gambar </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#navbar-tables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
+              <a class="nav-link" href="#navbar-kuis" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
                 <i class="ni ni-align-left-2 text-info"></i>
                 <span class="nav-link-text">Data Kuisoner </span>
               </a>
-              <div class="collapse" id="navbar-tables">
+              <div class="collapse" id="navbar-kuis">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="#" class="nav-link">

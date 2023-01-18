@@ -39,7 +39,7 @@
    // }
    
    else {
-      mysqli_query($koneksi, "INSERT INTO artikel (id_kategori, judul, deskripsi) VALUES ('$InputKat','$InputJud'.'$InputDes')");
+      mysqli_query($koneksi, "INSERT INTO artikel (id_kategori, judul, deskripsi) VALUES ('$InputKat','$InputJud','$InputDes')");
       echo "
 				<script>
 					setTimeout(function() { 

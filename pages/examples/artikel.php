@@ -123,27 +123,25 @@
                 <th>ID</th>
                 <th>ID_Kategori</th>
                 <th>Judul</th>
-                <th>Deskripsi</th>
                 <th>Opsi</th>
               </tr>
             </thead>
             <tbody>
             <?php
         require "../examples/koneksi.php";
-
+        $Number = 1;
         $GetTable = mysqli_query($koneksi, "SELECT * FROM artikel");
         while ($GetData = mysqli_fetch_array($GetTable)) {
             echo "
                 <tr>
-                    <td>$GetData[id]</td>
+                    <td>" . $Number++ . "</td>
                     <td>$GetData[id_kategori]</td>
                     <td>$GetData[judul]</td>
-                    <td>$GetData[deskripsi]</td>
                     <td>
-                    <a href='edit-data-artikel.php?id=$GetData[id]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
+                    <a href='edit-data-artikel.php?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
                     </a>
-                    <a href='hapus-data-artikel.php?id=$GetData[id]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
+                    <a href='hapus-data-artikel.php?id_artikel=$GetData[id_artikel]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>
                     </a>
                     </td>

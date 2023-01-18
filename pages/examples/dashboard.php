@@ -155,7 +155,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">Total Artikel</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="artikel.php">Total Artikel</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                       <?php
                           include 'koneksi.php';
@@ -240,13 +240,13 @@
     <!-- Page content -->
     <div class="container-fluid mt--6">
       <div class="row">
-        <div class="col-xl-8">
+        <div class="col-xl-5">
           <div class="card bg-neutral">
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-black text-uppercase ls-1 mb-1">Me-HealthGo</h6>
-                  <h5 class="h3 text-black mb-0">Galeri</h5>
+                  <h5 class="h3 text-black mb-0">Kuisoner</h5>
                 </div>
                 <div class="col">
                 </div>
@@ -256,23 +256,22 @@
               
               <div id="slider">
                 <figure>
-                  <img src="../../assets/img/docs/luar5.jpeg">
-                  <img src="../../assets/img/docs/luar1.jpeg">
-                  <img src="../../assets/img/docs/luar2.jpeg">
-                  <img src="../../assets/img/docs/luar3.jpeg">
-                  <img src="../../assets/img/docs/luar4.jpeg">
+                  <img src="../../assets/img/docs/apk (1).png">
+                  <img src="../../assets/img/docs/apk (2).png">
+                  <img src="../../assets/img/docs/apk (3).png">
+                  <img src="../../assets/img/docs/apk (4).png">
                 </figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
+        <div class="col-xl-5">
           <div class="card">
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-uppercase text-muted ls-1 mb-1">Me-HealthGo</h6>
-                  <h5 class="h3 mb-0">Fasilitas</h5>
+                  <h5 class="h3 mb-0">Artikel & Konsultan</h5>
                 </div>
               </div>
             </div>
@@ -280,11 +279,10 @@
               
               <div id="slider">
                 <figure>
-                  <img src="../../assets/img/docs/luar.jpeg">
-                  <img src="../../assets/img/docs/dalam.jpeg">
-                  <img src="../../assets/img/docs/w.jpeg">
-                  <img src="../../assets/img/docs/luar.jpeg">
-                  <img src="../../assets/img/docs/dalm.jpeg">
+                  <img src="../../assets/img/docs/apk (5).png">
+                  <img src="../../assets/img/docs/apk (6).png">
+                  <img src="../../assets/img/docs/apk (7).png">
+                  <img src="../../assets/img/docs/apk (8).png">
                 </figure>
               </div>
             </div>

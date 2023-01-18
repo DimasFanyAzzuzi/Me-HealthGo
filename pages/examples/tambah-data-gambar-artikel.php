@@ -1,5 +1,5 @@
 <?php
-  require('koneksi.php');
+  require('../examples/koneksi.php');
   session_start();
   if (!isset($_SESSION['Name'])) {
     echo "
@@ -10,7 +10,6 @@
     ";
   }
 ?>
-
 <!DOCTYPE html>
 <html>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -87,17 +86,17 @@
   <div class="main-content" id="panel">
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-gradient-green pb-6">
+    <div class="header bg-gradient-info pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Data</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Data Artikel</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="daftar-guru.php">Daftar Guru</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
+                  <li class="breadcrumb-item"><a href="gambar-artikel.php">Daftar Gambar</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
                 </ol>
               </nav>
             </div>
@@ -128,11 +127,11 @@
                 <div class="col">
                   <div class="card-profile-stats d-flex justify-content-center">
                     <div>
-                    <span class="heading">
+                      <span class="heading">
                       <?php
                           include 'koneksi.php';
 
-                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM artikel");
+                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id_artikel) AS CountData FROM artikel");
                           $GetData = mysqli_fetch_array($GetTable);
                           $GetCount = $GetData['CountData'];
 
@@ -142,11 +141,11 @@
                       <span class="description">Artikel</span>
                     </div>
                     <div>
-                    <span class="heading">
+                      <span class="heading">
                       <?php
                           include 'koneksi.php';
 
-                          $GetTable1 = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM konsultan");
+                          $GetTable1 = mysqli_query($koneksi, "SELECT COUNT(id_konsultan) AS CountData FROM konsultan");
                           $GetData = mysqli_fetch_array($GetTable1);
                           $GetCount1 = $GetData['CountData'];
 
@@ -156,11 +155,11 @@
                       <span class="description">Konsultan</span>
                     </div>
                     <div>
-                    <span class="heading">
+                      <span class="heading">
                       <?php
                           include 'koneksi.php';
 
-                          $GetTable2 = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM user");
+                          $GetTable2 = mysqli_query($koneksi, "SELECT COUNT(id_user) AS CountData FROM user");
                           $GetData = mysqli_fetch_array($GetTable2);
                           $GetCount2 = $GetData['CountData'];
 
@@ -194,68 +193,50 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Edit Data </h3>
+                  <h3 class="mb-0">Tambah Gambar Artikel </h3>
                 </div>
               </div>
             </div>
             <div class="card-body">
-            <?php
-              $id = $_GET['id'];
-
-              $SelectData = mysqli_query($koneksi, "SELECT * FROM artikel WHERE id = '$id'");
-              $GetData = mysqli_fetch_array($SelectData);
-            ?>
-              <form action="update-data-artikel.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
-                <input type="hidden" name="id" value="<?php echo $id; ?>"></input>
-                <h6 class="heading-small text-muted mb-4">Data Guru</h6>
+              <form action="insert-data-gambar-artikel.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+                <h6 class="heading-small text-muted mb-4">Data Gambar</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="Nama">Kategori</label>
-										    <select name="id_kategori" class="custom-select">
-                          <option value="">- Pilih Kategori -</option>
-                          <?php 
-                            $GetTableKat = mysqli_query($koneksi, "SELECT * FROM kategori");
-                            while ($GetDataKat = mysqli_fetch_array($GetTableKat)) {
-                              if($GetData['id'] == $GetDataKat['id']) {
-                                $terpilih = "selected"; 
-                              }else {
-                                $terpilih = "";
-                              }
-                              echo "
-                                <option value='$GetDataKat[id]'>$GetDataKat[nama]</option>
-                              ";
-                            }
-                          ?>
-										    </select>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-email">Judul</label>
-                        <input type="text" id="input-email" class="form-control" name="judul" placeholder="Isi Judul" value="<?php echo $GetData['judul']?>">
+                      <div class="form-group">
+                        <label for="Nama">Artikel</label>
+						    <select name="id_artikel" class="custom-select">
+                                <option value="">- Pilih Artikel -</option>
+                                <?php 
+                                    $GetTableKat = mysqli_query($koneksi, "SELECT * FROM artikel");
+                                    while ($GetDataKat = mysqli_fetch_array($GetTableKat)) {
+                                    echo "
+                                        <option value='$GetDataKat[id_artikel]'>$GetDataKat[judul]</option>
+                                    ";
+                                    }
+                                ?>
+							</select>
                       </div>
                     </div>
                   </div>
                 </div>
                 <hr class="my-4" />
                 <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Information</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-md-12">
+                <h6 class="heading-small text-muted mb-4">Masukkan gambar dalam format *jpg *jpeg *png</h6>
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label class="form-control-label" for="input-address">Deskripsi</label>
-                        <input id="input-address" class="form-control" name="deskripsi" placeholder="Isi Deskripsi" type="text" value="<?php echo $GetData['deskripsi']?>">
-                      </div>
+                        <label>Gambar*</label>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="nama_gambar">
+                                <label class="custom-file-label">Choose file</label>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <hr class="my-4" />
-                    <div class="col-lg-12 col-5 text-right">
-                      <button class="btn btn-sm btn-default" type="submit">Perbarui Data</button>
-                    </div>
+                <div class="col-lg-12 col-5 text-right">
+                    <button class="btn btn-sm btn-default" type="submit">Simpan Data</button>
+                </div>
               </form>
             </div>
           </div>

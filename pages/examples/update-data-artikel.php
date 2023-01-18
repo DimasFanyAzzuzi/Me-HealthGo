@@ -2,38 +2,32 @@
    require "koneksi.php";
 
       // Input text KodeBIO, Nama, dan Jenis Kelamin
-      $idGuru = $_POST['id_guru'];
-      $InputNama = $_POST['nama_guru'];
-      $InputNip = $_POST['nip'];
-      $ChooseKL = $_POST['jenis_kelamin'];
-      $InputTgl = $_POST['tgl_lahir'];
-      $InputAla = $_POST['alamat'];
-      $InputPs = $_POST['password_guru'];
-      $InputHp = $_POST['no_hp'];
-      $InputMpl = $_POST['id_mapel'];
-      $InputAdm = $_POST['id_admin'];
+      $id = $_POST['id_artikel'];
+      $InputKat = $_POST['id_kategori'];
+      $InputJud = $_POST['judul'];
+      $InputDes = $_POST['deskripsi'];
       
-      if (empty($InputNama) || empty($InputNip) || empty($ChooseKL) || empty($InputTgl) || empty($InputAla) || empty($InputPs) || empty($InputHp) || empty($InputMpl) || empty($InputAdm)) {
+   if (empty($InputKat) || empty($InputJud) || empty($InputDes)) {
          echo "
             <script>
                alert('Mohon lengkapi seluruh data!');
-               document.location.href = '../tables/tambah-data.php';
+               document.location.href = 'edit-data-artikel.php';
             </script>
          ";
       }
       else {
-         mysqli_query($koneksi, "UPDATE tbl_guru SET nama_guru = '$InputNama', nip = '$InputNip', jenis_kelamin = '$ChooseKL', tgl_lahir = '$InputTgl', alamat = '$InputAla', password_guru = '$InputPs', no_hp = '$InputHp', id_mapel = '$InputMpl', id_admin = '$InputAdm' where id_guru = '$idGuru'");
+         mysqli_query($koneksi, "UPDATE artikel SET id_kategori = '$InputKat', judul = '$InputJud', deskripsi = '$InputDes' where id_artikel = '$id'");
          echo "
                <script>
                   setTimeout(function() { 
                      Swal.fire({
                         title: 'Berhasil memperbarui data!',
-                        text: 'Anda masuk ke halaman guru',
+                        text: 'Anda masuk ke halaman daftar artikel',
                         icon: 'success',
                      });
                   },10);  
                   window.setTimeout(function(){ 
-                     window.location.replace('../tables/daftar-guru.php');
+                     window.location.replace('artikel.php');
                   },1500);
                </script>
             ";

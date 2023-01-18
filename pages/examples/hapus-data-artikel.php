@@ -1,7 +1,7 @@
 <?php
     require ('../examples/koneksi.php');
-    $id = $_GET['id'];
-    mysqli_query($koneksi, "DELETE FROM artikel WHERE id='$id'");
+    $id = $_GET['id_artikel'];
+    mysqli_query($koneksi, "DELETE FROM artikel WHERE id_artikel='$id'");
     echo "
 		<script>
 		setTimeout(function() { 

@@ -1,5 +1,5 @@
 <?php
-  require('../examples/koneksi.php');
+  require('koneksi.php');
   session_start();
   if (!isset($_SESSION['Name'])) {
     echo "
@@ -10,6 +10,7 @@
     ";
   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -91,12 +92,12 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Data Artikel</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Data</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="artikel.php">Daftar Artikel</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                  <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                 </ol>
               </nav>
             </div>
@@ -127,7 +128,7 @@
                 <div class="col">
                   <div class="card-profile-stats d-flex justify-content-center">
                     <div>
-                      <span class="heading">
+                    <span class="heading">
                       <?php
                           include 'koneksi.php';
 
@@ -141,7 +142,7 @@
                       <span class="description">Artikel</span>
                     </div>
                     <div>
-                      <span class="heading">
+                    <span class="heading">
                       <?php
                           include 'koneksi.php';
 
@@ -155,7 +156,7 @@
                       <span class="description">Konsultan</span>
                     </div>
                     <div>
-                      <span class="heading">
+                    <span class="heading">
                       <?php
                           include 'koneksi.php';
 
@@ -193,25 +194,37 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Tambah Artikel </h3>
+                  <h3 class="mb-0">Edit Data </h3>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <form action="insert-data-artikel.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+            <?php
+              $id = $_GET['id_artikel'];
+
+              $SelectData = mysqli_query($koneksi, "SELECT * FROM artikel WHERE id_artikel = '$id'");
+              $GetData = mysqli_fetch_array($SelectData);
+            ?>
+              <form action="update-data-artikel.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+                <input type="hidden" name="id_artikel" value="<?php echo $id; ?>"></input>
                 <h6 class="heading-small text-muted mb-4">Data Artikel</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
-                      <div class="form-group">
+                    <div class="form-group">
                         <label for="Nama">Kategori</label>
 										    <select name="id_kategori" class="custom-select">
                           <option value="">- Pilih Kategori -</option>
                           <?php 
                             $GetTableKat = mysqli_query($koneksi, "SELECT * FROM kategori");
                             while ($GetDataKat = mysqli_fetch_array($GetTableKat)) {
+                              if($GetData['id_kategori'] == $GetDataKat['id_kategori']) {
+                                $terpilih = "selected"; 
+                              }else {
+                                $terpilih = "";
+                              }
                               echo "
-                                <option value='$GetDataKat[id_kategori]'>$GetDataKat[nama]</option>
+                                <option value='$GetDataKat[id_kategori]'$terpilih>$GetDataKat[nama]</option>
                               ";
                             }
                           ?>
@@ -219,9 +232,9 @@
                       </div>
                     </div>
                     <div class="col-lg-6">
-                      <div class="form-group">
+                    <div class="form-group">
                         <label class="form-control-label" for="input-email">Judul</label>
-                        <input type="text" id="input-email" class="form-control" name="judul" placeholder="Isi Judul">
+                        <input type="text" id="input-email" class="form-control" name="judul" placeholder="Isi Judul" value="<?php echo $GetData['judul']?>">
                       </div>
                     </div>
                   </div>
@@ -234,13 +247,14 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="exampleFormControlTextarea1">Deskripsi</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" name="deskripsi" placeholder="Isi Deskripsi"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" name="deskripsi" placeholder="Isi Deskripsi"><?php echo $GetData['deskripsi']?></textarea>
                       </div>
                     </div>
                   </div>
                 </div>
+                <hr class="my-4" />
                     <div class="col-lg-12 col-5 text-right">
-                      <button class="btn btn-sm btn-default" type="submit">Simpan Data</button>
+                      <button class="btn btn-sm btn-default" type="submit">Perbarui Data</button>
                     </div>
               </form>
             </div>
