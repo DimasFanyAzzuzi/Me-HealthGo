@@ -155,12 +155,12 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="../tables/daftar-murid.php">Total Artikel</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">Total Artikel</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                       <?php
                           include 'koneksi.php';
 
-                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM artikel");
+                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id_artikel) AS CountData FROM artikel");
                           $GetData = mysqli_fetch_array($GetTable);
                           $GetCount = $GetData['CountData'];
 
@@ -183,12 +183,12 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="../tables/daftar-guru.php">Total Konsultan</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">Total Konsultan</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                       <?php
                           include 'koneksi.php';
 
-                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM konsultan");
+                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id_konsultan) AS CountData FROM konsultan");
                           $GetData = mysqli_fetch_array($GetTable);
                           $GetCount2 = $GetData['CountData'];
 
@@ -216,7 +216,7 @@
                         <?php
                           include 'koneksi.php';
 
-                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id) AS CountData FROM user");
+                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id_user) AS CountData FROM user");
                           $GetData = mysqli_fetch_array($GetTable);
                           $GetCount3 = $GetData['CountData'];
 

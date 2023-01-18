@@ -28,7 +28,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../examples/artikel.php"> 
+              <a class="nav-link" href="artikel.php"> 
                 <i class="ni ni-ungroup text-orange"></i>
                 <span class="nav-link-text">Daftar Artikel</span>
               </a>
@@ -41,13 +41,13 @@
               <div class="collapse" id="navbar-tables">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../tables/daftar-guru.php" class="nav-link">
+                    <a href="#" class="nav-link">
                       <span class="sidenav-mini-icon"> T </span>
                       <span class="sidenav-normal"> Daftar Kuis </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../tables/daftar-murid.php" class="nav-link">
+                    <a href="#" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal"> Daftar Jawaban </span>
                     </a>
@@ -56,11 +56,18 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../calendar.php">
+              <a class="nav-link" href="#">
+                <i class="ni ni-single-copy-04 text-green"></i>
+                <span class="nav-link-text">Daftar User</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Daftar Konsultan</span>
               </a>
             </li>
+            
           </ul>
           <!-- Divider -->
           <hr class="my-3">
