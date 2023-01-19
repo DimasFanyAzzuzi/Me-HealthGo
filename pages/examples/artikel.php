@@ -121,8 +121,9 @@
             <thead class="thead-light">
               <tr>
                 <th>No</th>
-                <th>ID_Kategori</th>
+                <th>Kategori</th>
                 <th>Judul</th>
+                <th>Gambar</th>
                 <th>Opsi</th>
               </tr>
             </thead>
@@ -130,13 +131,14 @@
             <?php
         require "../examples/koneksi.php";
         $Number = 1;
-        $GetTable = mysqli_query($koneksi, "SELECT * FROM artikel");
+        $GetTable = mysqli_query($koneksi, "SELECT artikel.*, gambar_artikel.nama_gambar, kategori.nama FROM artikel INNER JOIN gambar_artikel ON artikel.id_artikel = gambar_artikel.id_artikel INNER JOIN kategori ON artikel.id_kategori = kategori.id_kategori");
         while ($GetData = mysqli_fetch_array($GetTable)) {
             echo "
                 <tr>
                     <td>" . $Number++ . "</td>
-                    <td>$GetData[id_kategori]</td>
+                    <td>$GetData[nama]</td>
                     <td>$GetData[judul]</td>
+                    <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='avatar rounded-square mr-3'></td>
                     <td>
                     <a href='edit-data-artikel.php?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
