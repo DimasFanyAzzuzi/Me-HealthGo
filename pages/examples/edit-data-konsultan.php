@@ -91,12 +91,12 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Data User</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Daftar Konsultan</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="artikel.php">Daftar User</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                  <li class="breadcrumb-item"><a href="konsultan.php">Daftar Konsultan</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                 </ol>
               </nav>
             </div>
@@ -193,52 +193,65 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Tambah User </h3>
+                  <h3 class="mb-0">Edit Data Konsultan</h3>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <form action="insert-data-user.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
-                <h6 class="heading-small text-muted mb-4">Data User</h6>
+            <?php
+              $id = $_GET['id_konsultan'];
+
+              $SelectData = mysqli_query($koneksi, "SELECT * FROM konsultan WHERE id_konsultan = '$id'");
+              $GetData = mysqli_fetch_array($SelectData);
+            ?>
+              <form action="update-data-konsultan.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+              <input type="hidden" name="id_konsultan" value="<?php echo $id; ?>"></input>
+                <h6 class="heading-small text-muted mb-4">Data Konsultan</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Nama</label>
-                        <input type="text" id="input-email" class="form-control" name="name" placeholder="Isi Nama">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Username</label>
-                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pl-lg-4">
-                  <div class="row">
-                  <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Password</label>
-                        <input type="text" id="input-email" class="form-control" name="password" placeholder="Isi Password">
-                      </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-email">Nama</label>
+                            <input type="text" id="input-email" class="form-control" name="nama" placeholder="Isi Nama" value="<?php echo $GetData['nama']; ?>">
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                        <label for="Nama">Role*</label>
-                            <select name="role" class="custom-select">
-                                <option value="">- Pilih Role -</option>
-                                <option value="admin">admin</option>
-                                <option value="user">user</option>
-                            </select>
-                      </div>
+                            <label class="form-control-label" for="input-email">No. Handphone</label>
+                            <input type="text" id="input-email" class="form-control" name="noHp" placeholder="Isi Nomor Handphone" value="<?php echo $GetData['noHp']; ?>">
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <hr class="my-4" />
+                <div class="col-lg-12 col-5 text-right">
+                    <button class="btn btn-outline-success" type="submit">Perbarui Data</button>
+                </div>
+              </form>
+              <form action="update-gambar-konsultan.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+                <input type="hidden" name="id_konsultan" value="<?php echo $id; ?>"></input>
+                    <hr class="my-4" />
+                    <h6 class="heading-small text-muted mb-4">Foto</h6>
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="../../assets/img/img-kons/<?php echo $GetData['imageUrl']?>" alt="Image placeholder">
+                        <!-- Card body -->
+                        <div class="card-body">
+                        <p class="card-text mt-4"><i>NB : Klik Choose File di bawah untuk mengganti foto kemudian kllik perbarui foto.</i></p>
+                        </div>
+                    </div>
+                    <h6 class="heading-small text-muted mb-4">Masukkan foto dalam format *jpg *jpeg *png</h6>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Foto*</label>
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="imageUrl">
+                                    <label class="custom-file-label">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-12 col-5 text-right">
-                      <button class="btn btn-outline-success" type="submit">Simpan Data</button>
+                        <button class="btn btn-outline-success" type="submit">Perbarui Foto</button>
                     </div>
               </form>
             </div>

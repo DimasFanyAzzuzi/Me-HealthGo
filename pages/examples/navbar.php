@@ -3,7 +3,7 @@
       <!-- Brand -->
       <div class="sidenav-header  d-flex  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-          <img src="../../assets/img/brand/Me-HealthGo.png" class="navbar-brand-img" alt="..."><b> Me-HealthGo</b>
+          <img src="../../assets/img/brand/Me-HealthGo-dark.png" class="navbar-brand-img" alt="..."><b> Me-HealthGo</b>
         </a>
         <div class=" ml-auto ">
           <!-- Sidenav toggler -->
@@ -78,7 +78,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="konsultan.php">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Daftar Konsultan</span>
               </a>

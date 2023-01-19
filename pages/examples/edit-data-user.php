@@ -96,7 +96,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="daftar-user.php">Daftar User</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                  <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                 </ol>
               </nav>
             </div>
@@ -193,7 +193,7 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Tambah User </h3>
+                  <h3 class="mb-0">Edit User </h3>
                 </div>
               </div>
             </div>
