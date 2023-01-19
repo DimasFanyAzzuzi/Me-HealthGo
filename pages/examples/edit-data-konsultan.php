@@ -235,7 +235,7 @@
                         <img class="card-img-top" src="../../assets/img/img-kons/<?php echo $GetData['imageUrl']?>" alt="Image placeholder">
                         <!-- Card body -->
                         <div class="card-body">
-                        <p class="card-text mt-4"><i>NB : Klik Choose File di bawah untuk mengganti foto kemudian kllik perbarui foto.</i></p>
+                        <p class="card-text mt-4"><i>NB : Klik Choose File di bawah untuk mengganti foto kemudian klik Perbarui Foto.</i></p>
                         </div>
                     </div>
                     <h6 class="heading-small text-muted mb-4">Masukkan foto dalam format *jpg *jpeg *png</h6>
