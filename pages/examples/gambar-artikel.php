@@ -120,7 +120,7 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th>ID</th>
+                <th>No</th>
                 <th>Judul</th>
                 <th>Nama Gambar</th>
                 <th>Gambar</th>
@@ -138,7 +138,7 @@
                     <td>" . $Number++ . "</td>
                     <td>$GetData[judul]</td>
                     <td>$GetData[nama_gambar]</td>
-                    <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='card-body'></td>
+                    <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='avatar rounded-square mr-3'></td>
                     <td>
                     <a href='hapus-data-gambar-artikel.php?id_gambar=$GetData[id_gambar]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>

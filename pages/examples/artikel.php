@@ -120,7 +120,7 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th>ID</th>
+                <th>No</th>
                 <th>ID_Kategori</th>
                 <th>Judul</th>
                 <th>Opsi</th>
@@ -146,9 +146,9 @@
                     </a>
                     </td>
                 </tr>
-            ";
-        }
-    ?>
+              ";
+              }
+              ?>
             </tbody>
           </table>
         </div>

@@ -72,7 +72,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="daftar-user.php">
                 <i class="ni ni-single-copy-04 text-green"></i>
                 <span class="nav-link-text">Daftar User</span>
               </a>

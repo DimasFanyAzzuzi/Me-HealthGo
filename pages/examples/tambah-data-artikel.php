@@ -240,7 +240,7 @@
                   </div>
                 </div>
                     <div class="col-lg-12 col-5 text-right">
-                      <button class="btn btn-sm btn-default" type="submit">Simpan Data</button>
+                      <button class="btn btn-outline-success" type="submit">Simpan Data</button>
                     </div>
               </form>
             </div>
