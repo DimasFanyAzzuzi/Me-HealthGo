@@ -2,7 +2,11 @@
 
 include '../../pages/examples/koneksi.php';
 
-$sql    = "SELECT * FROM artikel";
+// $sql    = "SELECT * FROM artikel";
+
+$sql = "SELECT artikel.*, gambar_artikel.* FROM artikel INNER JOIN gambar_artikel ON artikel.id_artikel = gambar_artikel.id_artikel";
+
+// $sql_new = "SELECT gambar_artikel.*, artikel.judul FROM gambar_artikel INNER JOIN artikel ON gambar_artikel.id_artikel = artikel.id_artikel";
 
 $result = $koneksi->query($sql);
 
