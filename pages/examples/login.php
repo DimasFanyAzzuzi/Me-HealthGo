@@ -5,7 +5,7 @@
 	
 	if (isset($_POST['submit'])) {
 		$Username = $_POST['txt_email'];
-		$Password = md5($_POST['txt_pass']);
+		$Password = $_POST['txt_pass'];
 
 		$GetTable = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$Username' and password = '$Password'");
 		$GetData = mysqli_fetch_array($GetTable);

@@ -239,6 +239,17 @@
                     </div>
                   </div>
                 </div>
+                <!-- Text editor -->
+                <!-- <div class="card">
+                  <div class="card-header">
+                    <h3 class="mb-0">Text editor</h3>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div data-toggle="quill" data-quill-placeholder="Quill WYSIWYG"></div>
+                    </form>
+                  </div>
+                </div> -->
                     <div class="col-lg-12 col-5 text-right">
                       <button class="btn btn-outline-success" type="submit">Simpan Data</button>
                     </div>
@@ -253,6 +264,7 @@
   <!-- Core -->
   <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/vendor/quill/dist/quill.min.js"></script>
   <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="../../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="../../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
