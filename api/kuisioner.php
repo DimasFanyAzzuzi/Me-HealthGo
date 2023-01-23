@@ -1,25 +1,22 @@
 <?php
 
-include '../../pages/examples/koneksi.php';
+include '../pages/examples/koneksi.php';
 
-$username   = $_POST['username'];
-$password   = md5($_POST['password']);
+// $sql    = "SELECT * FROM artikel";
 
-$sql    = "SELECT * FROM user WHERE 
-        username = '$username' AND password = '$password'
-        ";
+$sql = "SELECT * FROM kuisioner";
 
 $result = $koneksi->query($sql);
 
 if ($result->num_rows > 0) {
-    $user = array();
+    $artikel = array();
     while ($row = $result->fetch_assoc()) {
-        $user[] = $row;
+        $artikel[] = $row;
     }
     echo json_encode(array(
         'message'   => 'Berhasil',
         'success'   => true,
-        'data'      => $user[0]  
+        'data'      => $artikel 
     ));
 } else {
     echo json_encode(array(

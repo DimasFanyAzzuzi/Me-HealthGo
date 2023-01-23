@@ -1,6 +1,6 @@
 <?php
 
-include '../../pages/examples/koneksi.php';
+include '../pages/examples/koneksi.php';
 
 $username   = $_POST['username'];
 $name       = $_POST['name'];
