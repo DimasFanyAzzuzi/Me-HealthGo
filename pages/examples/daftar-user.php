@@ -78,7 +78,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- Sidenav -->
   <?php
-    include 'navbar'
+    include 'navbar.php'
   ?>
   <!-- Main content -->
   <div class="main-content" id="panel">
@@ -99,7 +99,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="tambah-data-user.php" class="btn btn-sm btn-default">Tambah Data</a>
+              <a href="tambah-data-user" class="btn btn-sm btn-default">Tambah Data</a>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
             </thead>
             <tbody>
             <?php
-        require "../examples/koneksi";
+        require "../examples/koneksi.php";
         $Number = 1;
         $GetTable = mysqli_query($koneksi, "SELECT * FROM user");
         while ($GetData = mysqli_fetch_array($GetTable)) {

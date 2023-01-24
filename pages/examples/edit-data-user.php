@@ -94,8 +94,8 @@
               <h6 class="h2 text-white d-inline-block mb-0">Data User</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="daftar-user.php">Daftar User</a></li>
+                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="daftar-user">Daftar User</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                 </ol>
               </nav>

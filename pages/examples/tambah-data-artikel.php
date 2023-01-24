@@ -80,7 +80,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- Sidenav -->
   <?php
-    include 'nav';
+    include 'navbar.php';
   ?>
   <!-- Main content -->
   <div class="main-content" id="panel">
