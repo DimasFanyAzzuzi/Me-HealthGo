@@ -11,7 +11,12 @@ $sql_check  = "SELECT * FROM user WHERE username = '$username'";
 
 $result_check = $koneksi->query($sql_check);
 
-if ($result_check->num_rows > 0) {
+if ($username == "" || $name == "" || $password == "") {
+    echo json_encode(array(
+        'message'   => 'Gagal! Field tidak diisi',
+        'success'   => false
+    ));
+} else if ($result_check->num_rows > 0) {
     echo json_encode(array(
         'message'   => 'Username sudah terdaftar!',
         'success'   => false,
