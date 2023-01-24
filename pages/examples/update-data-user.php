@@ -5,7 +5,7 @@
       $id = $_POST['id_user'];
       $InputNam = $_POST['name'];
       $InputUs = $_POST['username'];
-      $InputPs = $_POST['password'];
+      $InputPs = md5($_POST['password']);
       $InputR = $_POST['role'];
       
    if (empty($InputNam) || empty($InputUs) || empty($InputPs) || empty($InputR)) {
