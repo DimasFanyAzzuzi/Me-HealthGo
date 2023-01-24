@@ -19,7 +19,7 @@
 			});
 		},10);  
 		window.setTimeout(function(){ 
-			window.location.replace('gambar-artikel.php');
+			window.location.replace('gambar-artikel);
 		},1500);
 		</script>
       ";

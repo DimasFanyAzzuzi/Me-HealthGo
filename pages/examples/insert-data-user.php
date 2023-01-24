@@ -10,7 +10,7 @@
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
-            document.location.href = 'tambah-data-user.php';
+            document.location.href = 'tambah-data-user';
          </script>
       ";
    }
@@ -18,7 +18,7 @@
    //    echo "
    //       <script>
    //          alert('Nama belum diisi!');
-   //          document.location.href = '../examples/tambah-data.php';
+   //          document.location.href = '../examples/tambah-data';
    //       </script>
    //    ";
    // }
@@ -26,7 +26,7 @@
    //    echo "
    //       <script>
    //          alert('Jenis kelamin belum diisi!');
-   //          document.location.href = '../form-biodata.php';
+   //          document.location.href = '../form-biodata';
    //       </script>
    //    ";
    // }
@@ -34,7 +34,7 @@
    //    echo "
    //       <script>
    //          alert('Profesi belum diisi!');
-   //          document.location.href = '../form-biodata.php';
+   //          document.location.href = '../form-biodata';
    //       </script>
    //    ";
    // }
@@ -51,7 +51,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('daftar-user.php');
+						window.location.replace('daftar-user');
 					},1500);
 				</script>
 			";

@@ -5,7 +5,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }
@@ -205,7 +205,7 @@
               $SelectData = mysqli_query($koneksi, "SELECT * FROM artikel WHERE id_artikel = '$id'");
               $GetData = mysqli_fetch_array($SelectData);
             ?>
-              <form action="update-data-artikel.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+              <form action="update-data-artikel" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
                 <input type="hidden" name="id_artikel" value="<?php echo $id; ?>"></input>
                 <h6 class="heading-small text-muted mb-4">Data Artikel</h6>
                 <div class="pl-lg-4">

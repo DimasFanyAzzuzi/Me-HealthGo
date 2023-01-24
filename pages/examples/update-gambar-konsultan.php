@@ -26,7 +26,7 @@ if ($CheckInput === 4) {
     echo "
        <script>
           alert('File foto masih belum diisi!');
-          document.location.href = 'edit-data-konsultan.php';
+          document.location.href = 'edit-data-konsultan';
        </script>
     ";
  }
@@ -34,7 +34,7 @@ if ($CheckInput === 4) {
     echo "
        <script>
           alert('Ekstensi file yang diperbolehkan hanya (JPG, JPEG, PNG)!');
-          document.location.href = 'edit-data-konsultan.php';
+          document.location.href = 'edit-data-konsultan';
        </script>
     ";
  }
@@ -42,7 +42,7 @@ if ($CheckInput === 4) {
     echo "
        <script>
           alert('Ukuran file terlalu besar, MAX (6 MB)!');
-          document.location.href = 'edit-data-konsultan.php';
+          document.location.href = 'edit-data-konsultan';
        </script>
     ";
  }
@@ -59,7 +59,7 @@ if ($CheckInput === 4) {
                       });
                   },10);  
                   window.setTimeout(function(){ 
-                      window.location.replace('konsultan.php');
+                      window.location.replace('konsultan');
                   },1500);
               </script>
           ";

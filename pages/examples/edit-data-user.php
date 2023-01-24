@@ -204,7 +204,7 @@
               $SelectData = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$id'");
               $GetData = mysqli_fetch_array($SelectData);
             ?>
-              <form action="update-data-user.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+              <form action="update-data-user" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
               <input type="hidden" name="id_user" value="<?php echo $id; ?>"></input>
               <h6 class="heading-small text-muted mb-4">Data User</h6>
                 <div class="pl-lg-4">

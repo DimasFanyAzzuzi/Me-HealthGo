@@ -4,7 +4,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }

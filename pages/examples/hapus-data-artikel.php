@@ -12,7 +12,7 @@
 			});
 		},10);  
 		window.setTimeout(function(){ 
-			window.location.replace('artikel.php');
+			window.location.replace('artikel');
 		},1500);
 		</script>
       ";

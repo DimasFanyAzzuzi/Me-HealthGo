@@ -4,7 +4,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }
@@ -140,10 +140,10 @@
                     <td>$GetData[judul]</td>
                     <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='avatar rounded-square mr-3'></td>
                     <td>
-                    <a href='edit-data-artikel.php?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
+                    <a href='edit-data-artikel?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
                     </a>
-                    <a href='hapus-data-artikel.php?id_artikel=$GetData[id_artikel]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
+                    <a href='hapus-data-artikel?id_artikel=$GetData[id_artikel]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>
                     </a>
                     </td>

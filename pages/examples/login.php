@@ -5,7 +5,7 @@
 	
 	if (isset($_POST['submit'])) {
 		$Username = $_POST['txt_email'];
-		$Password = md5($_POST['txt_pass']);
+		$Password = $_POST['txt_pass'];
 
 		$GetTable = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$Username' and password = '$Password'");
 		$GetData = mysqli_fetch_array($GetTable);
@@ -21,7 +21,7 @@
 						});
 					},10);
 					window.setTimeout(function(){ 
-						window.location.replace('login.php');
+						window.location.replace('login');
 					},1500);
 				</script>
 			";
@@ -43,7 +43,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('dashboard.php');
+						window.location.replace('dashboard');
 					},1500);
 				</script>
 			";
@@ -59,7 +59,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('login.php');
+						window.location.replace('login');
 					},1500);
 				</script>
 			";
@@ -181,7 +181,7 @@
               <div class="text-center text-muted mb-4">
                 <!-- <small>Or sign in with credentials</small> -->
               </div>
-              <form action="login.php" method="POST" role="form">
+              <form action="login" method="POST" role="form">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">

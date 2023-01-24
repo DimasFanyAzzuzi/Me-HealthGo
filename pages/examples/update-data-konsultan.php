@@ -9,7 +9,7 @@
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
-            document.location.href = 'edit-data-konsultan.php';
+            document.location.href = 'edit-data-konsultan';
          </script>
       ";
    }
@@ -25,7 +25,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('konsultan.php');
+						window.location.replace('konsultan');
 					},1500);
 				</script>
 			";

@@ -22,7 +22,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="dashboard.php" class="nav-link">
+              <a href="dashboard" class="nav-link">
                 <i class="ni ni-shop text-red"></i>
                 <span class="nav-link-text">Dashboards</span>
               </a>
@@ -35,13 +35,13 @@
               <div class="collapse" id="navbar-artikel">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="artikel.php" class="nav-link">
+                    <a href="artikel" class="nav-link">
                       <span class="sidenav-mini-icon"> D </span>
                       <span class="sidenav-normal"> Daftar Artikel </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="gambar-artikel.php" class="nav-link">
+                    <a href="gambar-artikel" class="nav-link">
                       <span class="sidenav-mini-icon"> E </span>
                       <span class="sidenav-normal"> Daftar Gambar </span>
                     </a>
@@ -72,13 +72,13 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="daftar-user.php">
+              <a class="nav-link" href="daftar-user">
                 <i class="ni ni-single-copy-04 text-green"></i>
                 <span class="nav-link-text">Daftar User</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="konsultan.php">
+              <a class="nav-link" href="konsultan">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Daftar Konsultan</span>
               </a>
