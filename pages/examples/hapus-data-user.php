@@ -12,7 +12,7 @@
 			});
 		},10);  
 		window.setTimeout(function(){ 
-			window.location.replace('daftar-user.php');
+			window.location.replace('daftar-user');
 		},1500);
 		</script>
       ";

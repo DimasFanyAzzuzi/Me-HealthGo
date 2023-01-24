@@ -27,7 +27,7 @@
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
-            document.location.href = 'tambah-data-gambar-artikel.php';
+            document.location.href = 'tambah-data-gambar-artikel';
          </script>
       ";
    }
@@ -35,7 +35,7 @@
       echo "
          <script>
             alert('File foto masih belum diisi!');
-            document.location.href = 'tambah-data-gambar-artikel.php';
+            document.location.href = 'tambah-data-gambar-artikel';
          </script>
       ";
    }
@@ -43,7 +43,7 @@
       echo "
          <script>
             alert('Ekstensi file yang diperbolehkan hanya (JPG, JPEG, PNG)!');
-            document.location.href = 'tambah-data-gambar-artikel.php';
+            document.location.href = 'tambah-data-gambar-artikel';
          </script>
       ";
    }
@@ -51,7 +51,7 @@
       echo "
          <script>
             alert('Ukuran file terlalu besar, MAX (6 MB)!');
-            document.location.href = 'tambah-data-gambar-artikel.php';
+            document.location.href = 'tambah-data-gambar-artikel';
          </script>
       ";
    }
@@ -68,7 +68,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('gambar-artikel.php');
+						window.location.replace('gambar-artikel');
 					},1500);
 				</script>
 			";

@@ -92,14 +92,14 @@
               <h6 class="h2 text-white d-inline-block mb-0">Data Artikel</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item">Daftar Gambar</li>
                   <li class="breadcrumb-item active" aria-current="page">Daftar Gambar</li>
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="tambah-data-gambar-artikel.php" class="btn btn-sm btn-default">Tambah Data</a>
+              <a href="tambah-data-gambar-artikel" class="btn btn-sm btn-default">Tambah Data</a>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@
                     <td>$GetData[nama_gambar]</td>
                     <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='avatar rounded-square mr-3'></td>
                     <td>
-                    <a href='hapus-data-gambar-artikel.php?id_gambar=$GetData[id_gambar]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
+                    <a href='hapus-data-gambar-artikel?id_gambar=$GetData[id_gambar]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>
                     </a>
                     </td>

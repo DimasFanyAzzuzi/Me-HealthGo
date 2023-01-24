@@ -11,7 +11,7 @@
          echo "
             <script>
                alert('Mohon lengkapi seluruh data!');
-               document.location.href = 'edit-data-artikel.php';
+               document.location.href = 'edit-data-artikel';
             </script>
          ";
       }
@@ -27,7 +27,7 @@
                      });
                   },10);  
                   window.setTimeout(function(){ 
-                     window.location.replace('artikel.php');
+                     window.location.replace('artikel');
                   },1500);
                </script>
             ";

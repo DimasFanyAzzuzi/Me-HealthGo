@@ -5,7 +5,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }
@@ -94,8 +94,8 @@
               <h6 class="h2 text-white d-inline-block mb-0">Daftar Konsultan</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="konsultan.php">Daftar Konsultan</a></li>
+                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="konsultan">Daftar Konsultan</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                 </ol>
               </nav>
@@ -204,7 +204,7 @@
               $SelectData = mysqli_query($koneksi, "SELECT * FROM konsultan WHERE id_konsultan = '$id'");
               $GetData = mysqli_fetch_array($SelectData);
             ?>
-              <form action="update-data-konsultan.php" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+              <form action="update-data-konsultan" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
               <input type="hidden" name="id_konsultan" value="<?php echo $id; ?>"></input>
                 <h6 class="heading-small text-muted mb-4">Data Konsultan</h6>
                 <div class="pl-lg-4">

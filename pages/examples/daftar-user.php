@@ -4,7 +4,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }
@@ -99,7 +99,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="tambah-data-user.php" class="btn btn-sm btn-default">Tambah Data</a>
+              <a href="tambah-data-user" class="btn btn-sm btn-default">Tambah Data</a>
             </div>
           </div>
         </div>
@@ -142,10 +142,10 @@
                     <td>$GetData[password]</td>
                     <td>$GetData[role]</td>
                     <td>
-                    <a href='edit-data-user.php?id_user=$GetData[id_user]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
+                    <a href='edit-data-user?id_user=$GetData[id_user]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
                     </a>
-                    <a href='hapus-data-user.php?id_user=$GetData[id_user]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
+                    <a href='hapus-data-user?id_user=$GetData[id_user]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>
                     </a>
                     </td>

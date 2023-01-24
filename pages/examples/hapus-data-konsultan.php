@@ -19,7 +19,7 @@
 			});
 		},10);  
 		window.setTimeout(function(){ 
-			window.location.replace('konsultan.php');
+			window.location.replace('konsultan');
 		},1500);
 		</script>
       ";

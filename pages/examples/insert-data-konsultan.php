@@ -28,7 +28,7 @@
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
-            document.location.href = 'tambah-data-konsultan.php';
+            document.location.href = 'tambah-data-konsultan';
          </script>
       ";
    }
@@ -36,7 +36,7 @@
       echo "
          <script>
             alert('File foto masih belum diisi!');
-            document.location.href = 'tambah-data-konsultan.php';
+            document.location.href = 'tambah-data-konsultan';
          </script>
       ";
    }
@@ -44,7 +44,7 @@
       echo "
          <script>
             alert('Ekstensi file yang diperbolehkan hanya (JPG, JPEG, PNG)!');
-            document.location.href = 'tambah-data-konsultan.php';
+            document.location.href = 'tambah-data-konsultan';
          </script>
       ";
    }
@@ -52,7 +52,7 @@
       echo "
          <script>
             alert('Ukuran file terlalu besar, MAX (6 MB)!');
-            document.location.href = 'tambah-data-konsultan.php';
+            document.location.href = 'tambah-data-konsultan';
          </script>
       ";
    }
@@ -69,7 +69,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('konsultan.php');
+						window.location.replace('konsultan');
 					},1500);
 				</script>
 			";

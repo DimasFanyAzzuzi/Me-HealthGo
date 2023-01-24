@@ -12,7 +12,7 @@
          echo "
             <script>
                alert('Mohon lengkapi seluruh data!');
-               document.location.href = 'edit-data-user.php';
+               document.location.href = 'edit-data-user';
             </script>
          ";
       }
@@ -28,7 +28,7 @@
                      });
                   },10);  
                   window.setTimeout(function(){ 
-                     window.location.replace('daftar-user.php');
+                     window.location.replace('daftar-user');
                   },1500);
                </script>
             ";

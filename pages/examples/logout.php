@@ -14,7 +14,7 @@
 						});
 					},10);  
 					window.setTimeout(function(){ 
-						window.location.replace('login.php');
+						window.location.replace('login');
 					},1500);
 				</script>
 			";

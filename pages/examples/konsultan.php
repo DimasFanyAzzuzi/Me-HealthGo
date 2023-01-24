@@ -4,7 +4,7 @@
     echo "
       <script>
         alert('Harap login terlebih dahulu sebelum mengakses halaman ini!');
-        document.location.href = '../examples/login.php';
+        document.location.href = '../examples/login';
       </script>
     ";
   }
@@ -92,14 +92,14 @@
               <h6 class="h2 text-white d-inline-block mb-0">Daftar Konsultan</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../examples/dashboard.php"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item">Daftar Konsultan</li>
                   <li class="breadcrumb-item active" aria-current="page">Daftar Konsultan</li>
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="tambah-data-konsultan.php" class="btn btn-sm btn-default">Tambah Data</a>
+              <a href="tambah-data-konsultan" class="btn btn-sm btn-default">Tambah Data</a>
             </div>
           </div>
         </div>
@@ -140,10 +140,10 @@
                     <td>$GetData[nama]</td>
                     <td>$GetData[noHp]</td>
                     <td>
-                    <a href='edit-data-konsultan.php?id_konsultan=$GetData[id_konsultan]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
+                    <a href='edit-data-konsultan?id_konsultan=$GetData[id_konsultan]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
                     </a>
-                    <a href='hapus-data-konsultan.php?id_konsultan=$GetData[id_konsultan]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
+                    <a href='hapus-data-konsultan?id_konsultan=$GetData[id_konsultan]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
                     <i class='fas fa-trash'></i>
                     </a>
                     </td>
