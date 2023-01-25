@@ -140,6 +140,9 @@
                     <td>$GetData[judul]</td>
                     <td><img src='../../assets/img/img-artikel/$GetData[nama_gambar]' class='avatar rounded-square mr-3'></td>
                     <td>
+                    <a href='detail-artikel?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Detail Data'>
+                    <i class='fas fa-info-circle'></i>
+                    </a>
                     <a href='edit-data-artikel?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
                     <i class='fas fa-user-edit'></i>
                     </a>
