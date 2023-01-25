@@ -2,11 +2,9 @@
 
 include '../pages/examples/koneksi.php';
 
+header('Content-type:application/json;charset=utf-8');
+
 $sql    = "SELECT * FROM artikel";
-
-// $sql = "SELECT artikel.*, gambar_artikel.nama_gambar FROM artikel, gambar_artikel WHERE artikel.id_artikel = gambar_artikel.id_artikel";
-
-// $sql_new = "SELECT gambar_artikel.*, artikel.judul FROM gambar_artikel INNER JOIN artikel ON gambar_artikel.id_artikel = artikel.id_artikel";
 
 $result = $koneksi->query($sql);
 
@@ -18,16 +16,17 @@ if ($result->num_rows > 0) {
         $array_gambar = array();
         while($gambar = $result_gambar->fetch_assoc()){
             $array_gambar[] = array(
-                'nama_gambar' => $gambar['nama_gambar']
+                'nama_gambar' => "/assets/img/img-artikel/".$gambar['nama_gambar']
             );
         }
 
         $artikel[] = array(
-            'id_artikel' => $row['id_artikel'],
-            'id_kategori' => $row['id_kategori'],
-            'judul' => $row['judul'],
-            'deskripsi' => $row['deskripsi'],
-            'gambar' => $array_gambar
+            'id_artikel'    => $row['id_artikel'],
+            'id_kategori'   => $row['id_kategori'],
+            'judul'         => $row['judul'],
+            'deskripsi'     => $row['deskripsi'],
+            'gambar'        => $array_gambar,
+            'thumbnail'     => $array_gambar[0]
         );
     }
     echo json_encode(array(

@@ -2,7 +2,7 @@
 
 include '../pages/examples/koneksi.php';
 
-// $sql    = "SELECT * FROM artikel";
+header('Content-type:application/json;charset=utf-8');
 
 $sql = "SELECT * FROM kuisioner";
 

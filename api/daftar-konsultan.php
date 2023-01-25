@@ -2,7 +2,7 @@
 
 include '../pages/examples/koneksi.php';
 
-// $sql    = "SELECT * FROM artikel";
+header('Content-type:application/json;charset=utf-8');
 
 $sql = "SELECT * FROM konsultan";
 
@@ -11,7 +11,12 @@ $result = $koneksi->query($sql);
 if ($result->num_rows > 0) {
     $artikel = array();
     while ($row = $result->fetch_assoc()) {
-        $artikel[] = $row;
+        $artikel[] = array(
+            'id_konsultan'  => $row['id_konsultan'],
+            'nama'          => $row['nama'],
+            'noHp'          => $row['noHp'],
+            'imageUrl'      => '/assets/img/img-kons/'.$row['imageUrl']
+        );
     }
     echo json_encode(array(
         'message'   => 'Berhasil',

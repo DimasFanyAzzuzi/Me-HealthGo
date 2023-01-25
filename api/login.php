@@ -2,6 +2,8 @@
 
 include '../pages/examples/koneksi.php';
 
+header('Content-type:application/json;charset=utf-8');
+
 $username   = $_POST['username'];
 $password   = md5($_POST['password']);
 
