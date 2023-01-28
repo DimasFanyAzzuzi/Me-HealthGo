@@ -27,7 +27,6 @@ if ($result->num_rows > 0) {
             'deskripsi'     => $row['deskripsi'],
             'gambar'        => $array_gambar,
             'thumbnail'     => $array_gambar[0],
-            'created_at'    => $row['created_at'],
             'created_at'    => $row['created_at']
         );
     }
