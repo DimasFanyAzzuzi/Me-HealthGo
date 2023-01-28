@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
             'nama'          => $row['nama'],
             'noHp'          => $row['noHp'],
             'pekerjaan'     => $row['pekerjaan'],
+            'alamat'        => $row['alamat'],
             'imageUrl'      => '/assets/img/img-kons/'.$row['imageUrl']
         );
     }
