@@ -4,10 +4,11 @@ include '../pages/examples/koneksi.php';
 
 header('Content-type:application/json;charset=utf-8');
 
-$username   = $_POST['username'];
-$name       = $_POST['name'];
-$password   = md5($_POST['password']);
-$role       = 'user';
+$username       = $_POST['username'];
+$name           = $_POST['name'];
+$password       = md5($_POST['password']);
+$asal_sekolah   = $_POST['asal_sekolah'];
+$role           = 'user';
 
 $sql_check  = "SELECT * FROM user WHERE username = '$username'";
 
@@ -25,10 +26,11 @@ if ($username == "" || $name == "" || $password == "") {
     ));
 } else {
     $sql = "INSERT INTO user SET
-            username    = '$username',
-            name        = '$name',
-            password    = '$password',
-            role        = '$role'
+            username        = '$username',
+            name            = '$name',
+            password        = '$password',
+            asal_sekolah    = '$asal_sekolah',
+            role            = '$role'
             ";
 
     $result = $koneksi->query($sql);
