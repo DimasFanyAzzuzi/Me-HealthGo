@@ -52,18 +52,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#navbar-kuis" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
                 <i class="ni ni-align-left-2 text-info"></i>
-                <span class="nav-link-text">Data Kuisoner </span>
+                <span class="nav-link-text">Data Kuisioner </span>
               </a>
               <div class="collapse" id="navbar-kuis">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="daftar-kuis" class="nav-link">
                       <span class="sidenav-mini-icon"> T </span>
                       <span class="sidenav-normal"> Daftar Kuis </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="daftar-jawaban" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal"> Daftar Jawaban </span>
                     </a>

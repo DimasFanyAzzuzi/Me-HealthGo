@@ -91,11 +91,11 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Data User</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Data Kuisioner</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="daftar-user">Daftar User</a></li>
+                  <li class="breadcrumb-item"><a href="daftar-kuis">Daftar Kuis</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
                 </ol>
               </nav>
@@ -193,45 +193,19 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Tambah User </h3>
+                  <h3 class="mb-0">Tambah Kuis</h3>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <form action="insert-data-user" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
-                <h6 class="heading-small text-muted mb-4">Data User</h6>
+              <form action="insert-data-kuis" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+                <h6 class="heading-small text-muted mb-4">Data Kuis</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Nama</label>
-                        <input type="text" id="input-email" class="form-control" name="name" placeholder="Isi Nama">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Username</label>
-                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pl-lg-4">
-                  <div class="row">
-                  <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Password</label>
-                        <input type="text" id="input-email" class="form-control" name="password" placeholder="Isi Password">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                        <label for="Nama">Role*</label>
-                            <select name="role" class="custom-select">
-                                <option value="">- Pilih Role -</option>
-                                <option value="admin">admin</option>
-                                <option value="user">user</option>
-                            </select>
+                        <label class="form-control-label" for="input-email">Pertanyaan</label>
+                        <input type="text" id="input-email" class="form-control" name="pertanyaan" placeholder="Isi pertanyaan kuisioner">
                       </div>
                     </div>
                   </div>
