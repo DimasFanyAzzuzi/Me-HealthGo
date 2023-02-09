@@ -155,7 +155,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="artikel.php">Total Artikel</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="artikel">Total Artikel</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                       <?php
                           include 'koneksi.php';
@@ -183,7 +183,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">Total Konsultan</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="konsultan">Total Konsultan</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                       <?php
                           include 'koneksi.php';
@@ -211,7 +211,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total Users</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="daftar-user">Total User</a></h5>
                       <span class="h2 font-weight-bold mb-0">
                         <?php
                           include 'koneksi.php';
