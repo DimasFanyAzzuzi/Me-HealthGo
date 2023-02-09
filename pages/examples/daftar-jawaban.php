@@ -89,17 +89,14 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Daftar Artikel</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Daftar Jawaban</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item">Daftar Artikel</li>
-                  <li class="breadcrumb-item active" aria-current="page">Daftar Artikel</li>
+                  <li class="breadcrumb-item"><a href="dashboard"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item">Daftar Jawaban</li>
+                  <li class="breadcrumb-item active" aria-current="page">Daftar Jawaban</li>
                 </ol>
               </nav>
-            </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a href="tambah-data-artikel" class="btn btn-sm btn-default">Tambah Data</a>
             </div>
           </div>
         </div>
@@ -111,7 +108,7 @@
         <div class="card-header border-0">
           <div class="row">
             <div class="col-6">
-              <h3 class="mb-0">Data Artikel</h3>
+              <h3 class="mb-0">Data Jawaban</h3>
             </div>
           </div>
         </div>
@@ -121,35 +118,23 @@
             <thead class="thead-light">
               <tr>
                 <th>No</th>
-                <th>Kategori</th>
-                <th>Judul</th>
-                <th>Tanggal</th>
-                <th>Opsi</th>
+                <th>Nama</th>
+                <th>Pertanyaan</th>
+                <th>Jawaban</th>
               </tr>
             </thead>
             <tbody>
             <?php
         require "../examples/koneksi.php";
         $Number = 1;
-        $GetTable = mysqli_query($koneksi, "SELECT artikel.*, kategori.nama FROM artikel INNER JOIN kategori ON artikel.id_kategori = kategori.id_kategori");
+        $GetTable = mysqli_query($koneksi, "SELECT jawaban.*, user.name, kuisioner.pertanyaan FROM jawaban INNER JOIN user ON jawaban.id_user = user.id_user INNER JOIN kuisioner ON jawaban.id_kuisioner = kuisioner.id_kuisioner");
         while ($GetData = mysqli_fetch_array($GetTable)) {
             echo "
                 <tr>
                     <td>" . $Number++ . "</td>
-                    <td>$GetData[nama]</td>
-                    <td>$GetData[judul]</td>
-                    <td>$GetData[created_at]</td>
-                    <td>
-                    <a href='detail-artikel?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Detail Data'>
-                    <i class='fas fa-info-circle'></i>
-                    </a>
-                    <a href='edit-data-artikel?id_artikel=$GetData[id_artikel]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
-                    <i class='fas fa-user-edit'></i>
-                    </a>
-                    <a href='hapus-data-artikel?id_artikel=$GetData[id_artikel]'class='table-action table-action-delete' data-toggle='tooltip' data-original-title='Delete Data'>
-                    <i class='fas fa-trash'></i>
-                    </a>
-                    </td>
+                    <td>$GetData[name]</td>
+                    <td>$GetData[pertanyaan]</td>
+                    <td>$GetData[jawaban]</td>
                 </tr>
               ";
               }

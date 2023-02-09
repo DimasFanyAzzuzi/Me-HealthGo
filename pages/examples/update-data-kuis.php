@@ -2,33 +2,30 @@
    require "koneksi.php";
 
       // Input text KodeBIO, Nama, dan Jenis Kelamin
-      $id = $_POST['id_artikel'];
-      $InputKat = $_POST['id_kategori'];
-      $InputJud = $_POST['judul'];
-      $InputDes = $_POST['deskripsi'];
-      $InputTgl = $_POST['created_at'];
+      $id = $_POST['id_kuisioner'];
+      $InputP = $_POST['pertanyaan'];
       
-   if (empty($InputKat) || empty($InputJud) || empty($InputDes) || empty($InputTgl)) {
+   if (empty($InputP)) {
          echo "
             <script>
                alert('Mohon lengkapi seluruh data!');
-               document.location.href = 'edit-data-artikel';
+               document.location.href = 'edit-data-kuis';
             </script>
          ";
       }
       else {
-         mysqli_query($koneksi, "UPDATE artikel SET id_kategori = '$InputKat', judul = '$InputJud', deskripsi = '$InputDes', created_at = '$InputTgl' where id_artikel = '$id'");
+         mysqli_query($koneksi, "UPDATE kuisioner SET pertanyaan = '$InputP' where id_kuisioner = '$id'");
          echo "
                <script>
                   setTimeout(function() { 
                      Swal.fire({
                         title: 'Berhasil memperbarui data!',
-                        text: 'Anda masuk ke halaman daftar artikel',
+                        text: 'Anda masuk ke halaman daftar kuis',
                         icon: 'success',
                      });
                   },10);  
                   window.setTimeout(function(){ 
-                     window.location.replace('artikel');
+                     window.location.replace('daftar-kuis');
                   },1500);
                </script>
             ";

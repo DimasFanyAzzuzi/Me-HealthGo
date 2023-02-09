@@ -4,8 +4,9 @@
    $InputKat = $_POST['id_kategori'];
    $InputJud = $_POST['judul'];
    $InputDes = $_POST['deskripsi'];
+   $InputTgl = $_POST['created_at'];
 
-   if (empty($InputKat) || empty($InputJud) || empty($InputDes)) {
+   if (empty($InputKat) || empty($InputJud) || empty($InputDes) || empty($InputTgl)) {
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
@@ -39,7 +40,7 @@
    // }
    
    else {
-      mysqli_query($koneksi, "INSERT INTO artikel (id_kategori, judul, deskripsi) VALUES ('$InputKat','$InputJud','$InputDes')");
+      mysqli_query($koneksi, "INSERT INTO artikel (id_kategori, judul, deskripsi, created_at) VALUES ('$InputKat','$InputJud','$InputDes','$InputTgl')");
       echo "
 				<script>
 					setTimeout(function() { 

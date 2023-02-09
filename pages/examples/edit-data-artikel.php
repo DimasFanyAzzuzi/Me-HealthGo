@@ -237,6 +237,12 @@
                         <input type="text" id="input-email" class="form-control" name="judul" placeholder="Isi Judul" value="<?php echo $GetData['judul']?>">
                       </div>
                     </div>
+                    <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-email">Tanggal</label>
+                        <input type="date" id="input-email" class="form-control" name="created_at" placeholder="Isi Tanggal" value="<?php echo $GetData['created_at']?>">
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <hr class="my-4" />
