@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jan 2023 pada 02.39
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Generation Time: Feb 10, 2023 at 04:34 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,38 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel`
+-- Table structure for table `artikel`
 --
 
 CREATE TABLE `artikel` (
   `id_artikel` int(4) NOT NULL,
   `id_kategori` int(4) NOT NULL,
   `judul` varchar(60) NOT NULL,
-  `deskripsi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `deskripsi` text NOT NULL,
+  `created_at` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `artikel`
+-- Dumping data for table `artikel`
 --
 
-INSERT INTO `artikel` (`id_artikel`, `id_kategori`, `judul`, `deskripsi`) VALUES
-(1, 2, 'Latihan Dasar', 'tes coba duu'),
-(2, 1, 'Artikel Mental 1', 'Lorem, ipsum dolor sit amet consectetur ');
+INSERT INTO `artikel` (`id_artikel`, `id_kategori`, `judul`, `deskripsi`, `created_at`) VALUES
+(1, 2, 'Latihan Dasar', 'tes coba duu', '2023-01-16'),
+(2, 1, 'Artikel Mental 1', 'Lorem, ipsum dolor sit amet consectetur ', '2023-01-20');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gambar_artikel`
+-- Table structure for table `gambar_artikel`
 --
 
 CREATE TABLE `gambar_artikel` (
   `id_gambar` int(4) NOT NULL,
   `id_artikel` int(4) NOT NULL,
   `nama_gambar` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `gambar_artikel`
+-- Dumping data for table `gambar_artikel`
 --
 
 INSERT INTO `gambar_artikel` (`id_gambar`, `id_artikel`, `nama_gambar`) VALUES
@@ -66,7 +67,7 @@ INSERT INTO `gambar_artikel` (`id_gambar`, `id_artikel`, `nama_gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jawaban`
+-- Table structure for table `jawaban`
 --
 
 CREATE TABLE `jawaban` (
@@ -74,21 +75,28 @@ CREATE TABLE `jawaban` (
   `id_user` int(4) NOT NULL,
   `id_kuisioner` int(4) NOT NULL,
   `jawaban` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jawaban`
+--
+
+INSERT INTO `jawaban` (`id_jawaban`, `id_user`, `id_kuisioner`, `jawaban`) VALUES
+(1, 7, 34, 'iya');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
   `id_kategori` int(4) NOT NULL,
   `nama` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama`) VALUES
@@ -98,54 +106,56 @@ INSERT INTO `kategori` (`id_kategori`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konsultan`
+-- Table structure for table `konsultan`
 --
 
 CREATE TABLE `konsultan` (
   `id_konsultan` int(4) NOT NULL,
   `nama` varchar(60) NOT NULL,
   `noHp` varchar(13) NOT NULL,
+  `pekerjaan` varchar(255) NOT NULL,
+  `alamat` text NOT NULL,
   `imageUrl` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `konsultan`
+-- Dumping data for table `konsultan`
 --
 
-INSERT INTO `konsultan` (`id_konsultan`, `nama`, `noHp`, `imageUrl`) VALUES
-(1, 'Moh Bahrul Ulum', '089516295079', '63ccb69b11dbb-dsc_1662 - copy.jpg'),
-(2, 'Dimas Fany Azzuzi', '089619713034', '63ccb718eef56-20210216_131727.jpg');
+INSERT INTO `konsultan` (`id_konsultan`, `nama`, `noHp`, `pekerjaan`, `alamat`, `imageUrl`) VALUES
+(3, 'AMIRINZA NAVILYAH PUTRI', '+628214097923', '', '', '63e5ba8134987-img_20230123_095827_606.jpg'),
+(4, 'Ns. M. Elyas Arif Budiman, S.Kep., M.Kep.', '+628384748777', '', '', '63e5bab9b39c2-whatsapp image 2023-02-10 at 10.03.41.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kuisioner`
+-- Table structure for table `kuisioner`
 --
 
 CREATE TABLE `kuisioner` (
   `id_kuisioner` int(11) NOT NULL,
   `pertanyaan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kuisioner`
+-- Dumping data for table `kuisioner`
 --
 
 INSERT INTO `kuisioner` (`id_kuisioner`, `pertanyaan`) VALUES
-(1, 'Saya bahagia, puas, atau senang dengan kehidupan saya'),
+(1, 'Saya bahagia, puas, atau senang dengan kehidupan pribadi saya'),
 (2, 'Saya merasa kesepian'),
 (3, 'Saya takut atau gelisah ketika dihadapkan pada situasi yang tidak terduga'),
 (4, 'Saya merasa masa depan terlihat penuh harapan dan menjanjikan bagi saya'),
 (5, 'Kehidupan sehari-hari saya dipenuhi oleh hal-hal yang menarik'),
 (6, 'Saya merasa tenang dan terbebas dari perasaan tertekan'),
 (7, 'Saya menikmati hal-hal yang sedang saya lakukan'),
-(8, 'Saya menyadari jika saya kehilangan kendali untuk bertindak, berbicara, berpikir, merasakan, atau mengingat'),
+(8, 'Saya menyadari jika saya kehilangan kendali untuk bertindak, berbicara,\r\nberpikir, merasakan, atau mengingat'),
 (9, 'Saya merasa sangat sedih dan tertekan'),
 (10, 'Saya merasa dicintai dan dibutuhkan'),
 (11, 'Saya merasa penuh kecemasan'),
-(12, 'Saya berharap memiliki hari yang menarik atau menyenangkan saat bangun di pagi hari'),
+(12, 'Saya berharap memiliki hari yang menarik atau menyenangkan saat bangun di\r\npagi hari\r\n'),
 (13, 'Saya merasa tegang atau penuh emosi'),
-(14, 'Saya mampu mengendalikan perilaku, pikiran, emosi atau perasaan saya dengan penuh kesadaran'),
+(14, 'Saya mampu mengendalikan perilaku, pikiran, emosi atau perasaan saya\r\ndengan penuh kesadaran'),
 (15, 'Tangan saya pernah gemetar ketika sedang mencoba melakukan sesuatu'),
 (16, 'Saya merasa bahwa tidak ada sesuatu yang saya inginkan'),
 (17, 'Saya merasa tenang dan damai'),
@@ -155,9 +165,9 @@ INSERT INTO `kuisioner` (`id_kuisioner`, `pertanyaan`) VALUES
 (21, 'Saya merasa bahwa orang lain akan merasa lebih baik apabila saya meninggal'),
 (22, 'Saya dapat merasa santai dengan mudah'),
 (23, 'Saya merasa bahwa hubungan cinta saya penuh dengan perasaan mencintai dan dicintai'),
-(24, 'Saya merasa bahwa segala sesuatu yang terjadi tidak sesuai dengan keinginan saya'),
+(24, 'Saya merasa bahwa segala sesuatu yang terjadi tidak sesuai dengan keinginan\r\nsaya'),
 (25, 'Saya terganggu oleh rasa gelisah, atau kebingungan'),
-(26, 'Saya merasa bahwa hidup adalah suatu pengalaman yang amat menarik dan menyenangkan'),
+(26, 'Saya merasa bahwa hidup adalah suatu pengalaman yang amat menarik dan\r\nmenyenangkan'),
 (27, 'Saya merasa sangat sedih sehingga tidak ada yang dapat menghibur saya'),
 (28, 'Saya berpikir untuk mengakhiri hidup saya'),
 (29, 'Saya merasa gelisah, tidak tenang atau tidak sabar'),
@@ -174,7 +184,7 @@ INSERT INTO `kuisioner` (`id_kuisioner`, `pertanyaan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -182,40 +192,42 @@ CREATE TABLE `user` (
   `username` varchar(60) NOT NULL,
   `name` varchar(60) NOT NULL,
   `password` varchar(60) NOT NULL,
+  `asal_sekolah` varchar(255) NOT NULL,
   `role` enum('admin','user') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `name`, `password`, `role`) VALUES
-(1, 'admin', 'Admin Me-HealthGo', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(3, 'dimas', 'dimas', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
-(4, 'mahfud', 'mahfud', '1234', 'user'),
-(5, 'bahrul@gmail.com', 'Moh Bahrul Ulum', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
-(6, 'azril', 'Azril Nur Rahman', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
+INSERT INTO `user` (`id_user`, `username`, `name`, `password`, `asal_sekolah`, `role`) VALUES
+(1, 'admin', 'Admin Me-HealthGo', '21232f297a57a5a743894a0e4a801fc3', '', 'admin'),
+(3, 'dimas', 'dimas', '81dc9bdb52d04dc20036dbd8313ed055', '', 'user'),
+(4, 'mahfud', 'mahfud', '1234', '', 'user'),
+(5, 'bahrul@gmail.com', 'Moh Bahrul Ulum', '81dc9bdb52d04dc20036dbd8313ed055', '', 'user'),
+(7, 'Dimas Fany Azzuzi ', 'dimas', '4abf6b9b55aa45ef1e1200d0df5a9eb8', 'MAN 2 SITUBONDO ', 'user'),
+(8, 'uguhu', 'awaw', '5c69e64cebfa6578475dc7f68c8b4085', 'uuhhu', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `artikel`
+-- Indexes for table `artikel`
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id_artikel`),
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- Indeks untuk tabel `gambar_artikel`
+-- Indexes for table `gambar_artikel`
 --
 ALTER TABLE `gambar_artikel`
   ADD PRIMARY KEY (`id_gambar`),
   ADD KEY `id_artikel` (`id_artikel`);
 
 --
--- Indeks untuk tabel `jawaban`
+-- Indexes for table `jawaban`
 --
 ALTER TABLE `jawaban`
   ADD PRIMARY KEY (`id_jawaban`),
@@ -223,93 +235,93 @@ ALTER TABLE `jawaban`
   ADD KEY `id_kuisioner` (`id_kuisioner`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `konsultan`
+-- Indexes for table `konsultan`
 --
 ALTER TABLE `konsultan`
   ADD PRIMARY KEY (`id_konsultan`);
 
 --
--- Indeks untuk tabel `kuisioner`
+-- Indexes for table `kuisioner`
 --
 ALTER TABLE `kuisioner`
   ADD PRIMARY KEY (`id_kuisioner`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `artikel`
+-- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_artikel` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `gambar_artikel`
+-- AUTO_INCREMENT for table `gambar_artikel`
 --
 ALTER TABLE `gambar_artikel`
   MODIFY `id_gambar` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `jawaban`
+-- AUTO_INCREMENT for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  MODIFY `id_jawaban` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jawaban` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `konsultan`
+-- AUTO_INCREMENT for table `konsultan`
 --
 ALTER TABLE `konsultan`
-  MODIFY `id_konsultan` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_konsultan` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `kuisioner`
+-- AUTO_INCREMENT for table `kuisioner`
 --
 ALTER TABLE `kuisioner`
-  MODIFY `id_kuisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_kuisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `artikel`
+-- Constraints for table `artikel`
 --
 ALTER TABLE `artikel`
   ADD CONSTRAINT `artikel_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ketidakleluasaan untuk tabel `gambar_artikel`
+-- Constraints for table `gambar_artikel`
 --
 ALTER TABLE `gambar_artikel`
   ADD CONSTRAINT `gambar_artikel_ibfk_1` FOREIGN KEY (`id_artikel`) REFERENCES `artikel` (`id_artikel`);
 
 --
--- Ketidakleluasaan untuk tabel `jawaban`
+-- Constraints for table `jawaban`
 --
 ALTER TABLE `jawaban`
   ADD CONSTRAINT `jawaban_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
