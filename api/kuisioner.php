@@ -9,14 +9,18 @@ $sql = "SELECT * FROM kuisioner";
 $result = $koneksi->query($sql);
 
 if ($result->num_rows > 0) {
-    $artikel = array();
+    $kuisioner = array();
     while ($row = $result->fetch_assoc()) {
-        $artikel[] = $row;
+        $kuisioner[] = array(
+            'id_kuisioner'    => $row['id_kuisioner'],
+            'nomor'        => $row['nomor'],
+            'pertanyaan'   => $row['pertanyaan']
+        );
     }
     echo json_encode(array(
         'message'   => 'Berhasil',
         'success'   => true,
-        'data'      => $artikel 
+        'data'      => $kuisioner
     ));
 } else {
     echo json_encode(array(

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 04:34 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.19
+-- Host: localhost
+-- Generation Time: Feb 11, 2023 at 10:26 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `artikel` (
   `judul` varchar(60) NOT NULL,
   `deskripsi` text NOT NULL,
   `created_at` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `artikel`
@@ -53,7 +53,7 @@ CREATE TABLE `gambar_artikel` (
   `id_gambar` int(4) NOT NULL,
   `id_artikel` int(4) NOT NULL,
   `nama_gambar` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gambar_artikel`
@@ -71,18 +71,19 @@ INSERT INTO `gambar_artikel` (`id_gambar`, `id_artikel`, `nama_gambar`) VALUES
 --
 
 CREATE TABLE `jawaban` (
-  `id_jawaban` int(4) NOT NULL,
+  `id_jawaban` int(11) NOT NULL,
   `id_user` int(4) NOT NULL,
-  `id_kuisioner` int(4) NOT NULL,
-  `jawaban` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `detail_jawaban` text NOT NULL,
+  `nilai` int(11) NOT NULL,
+  `hasil` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `jawaban`
 --
 
-INSERT INTO `jawaban` (`id_jawaban`, `id_user`, `id_kuisioner`, `jawaban`) VALUES
-(1, 7, 34, 'iya');
+INSERT INTO `jawaban` (`id_jawaban`, `id_user`, `detail_jawaban`, `nilai`, `hasil`) VALUES
+(1, 5, '[{kuis: 1 | nilai: 4}, {kuis: 2 | nilai: 3}]', 7, 'Tidak Mengalami Depresi');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,7 @@ INSERT INTO `jawaban` (`id_jawaban`, `id_user`, `id_kuisioner`, `jawaban`) VALUE
 CREATE TABLE `kategori` (
   `id_kategori` int(4) NOT NULL,
   `nama` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kategori`
@@ -116,7 +117,7 @@ CREATE TABLE `konsultan` (
   `pekerjaan` varchar(255) NOT NULL,
   `alamat` text NOT NULL,
   `imageUrl` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `konsultan`
@@ -134,52 +135,53 @@ INSERT INTO `konsultan` (`id_konsultan`, `nama`, `noHp`, `pekerjaan`, `alamat`, 
 
 CREATE TABLE `kuisioner` (
   `id_kuisioner` int(11) NOT NULL,
+  `nomor` varchar(3) NOT NULL,
   `pertanyaan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kuisioner`
 --
 
-INSERT INTO `kuisioner` (`id_kuisioner`, `pertanyaan`) VALUES
-(1, 'Saya bahagia, puas, atau senang dengan kehidupan pribadi saya'),
-(2, 'Saya merasa kesepian'),
-(3, 'Saya takut atau gelisah ketika dihadapkan pada situasi yang tidak terduga'),
-(4, 'Saya merasa masa depan terlihat penuh harapan dan menjanjikan bagi saya'),
-(5, 'Kehidupan sehari-hari saya dipenuhi oleh hal-hal yang menarik'),
-(6, 'Saya merasa tenang dan terbebas dari perasaan tertekan'),
-(7, 'Saya menikmati hal-hal yang sedang saya lakukan'),
-(8, 'Saya menyadari jika saya kehilangan kendali untuk bertindak, berbicara,\r\nberpikir, merasakan, atau mengingat'),
-(9, 'Saya merasa sangat sedih dan tertekan'),
-(10, 'Saya merasa dicintai dan dibutuhkan'),
-(11, 'Saya merasa penuh kecemasan'),
-(12, 'Saya berharap memiliki hari yang menarik atau menyenangkan saat bangun di\r\npagi hari\r\n'),
-(13, 'Saya merasa tegang atau penuh emosi'),
-(14, 'Saya mampu mengendalikan perilaku, pikiran, emosi atau perasaan saya\r\ndengan penuh kesadaran'),
-(15, 'Tangan saya pernah gemetar ketika sedang mencoba melakukan sesuatu'),
-(16, 'Saya merasa bahwa tidak ada sesuatu yang saya inginkan'),
-(17, 'Saya merasa tenang dan damai'),
-(18, 'Saya merasa bahwa emosi saya stabil'),
-(19, 'Saya merasa murung dan sedih'),
-(20, 'Saya merasa ingin menangis'),
-(21, 'Saya merasa bahwa orang lain akan merasa lebih baik apabila saya meninggal'),
-(22, 'Saya dapat merasa santai dengan mudah'),
-(23, 'Saya merasa bahwa hubungan cinta saya penuh dengan perasaan mencintai dan dicintai'),
-(24, 'Saya merasa bahwa segala sesuatu yang terjadi tidak sesuai dengan keinginan\r\nsaya'),
-(25, 'Saya terganggu oleh rasa gelisah, atau kebingungan'),
-(26, 'Saya merasa bahwa hidup adalah suatu pengalaman yang amat menarik dan\r\nmenyenangkan'),
-(27, 'Saya merasa sangat sedih sehingga tidak ada yang dapat menghibur saya'),
-(28, 'Saya berpikir untuk mengakhiri hidup saya'),
-(29, 'Saya merasa gelisah, tidak tenang atau tidak sabar'),
-(30, 'Saya menjadi murung atau merenung karena suatu hal'),
-(31, 'Saya gembira dan bersenang hati'),
-(32, 'Saya mengalami kebingungan, marah atau gugup'),
-(33, 'Saya merasa khawatir'),
-(34, 'Saya bahagia'),
-(35, 'Saya mencoba untuk menenangkan diri'),
-(36, 'Saya merasa kurang bersemangat'),
-(37, 'Saya merasa segar dan bugar ketika bangun tidur'),
-(38, 'Saya berada dalam keadaan tegang, stres atau tertekan');
+INSERT INTO `kuisioner` (`id_kuisioner`, `nomor`, `pertanyaan`) VALUES
+(1, '1', 'Saya bahagia, puas, atau senang dengan kehidupan pribadi saya'),
+(2, '2', 'Saya merasa kesepian'),
+(3, '3', 'Saya takut atau gelisah ketika dihadapkan pada situasi yang tidak terduga'),
+(4, '4', 'Saya merasa masa depan terlihat penuh harapan dan menjanjikan bagi saya'),
+(5, '5', 'Kehidupan sehari-hari saya dipenuhi oleh hal-hal yang menarik'),
+(6, '6', 'Saya merasa tenang dan terbebas dari perasaan tertekan'),
+(7, '7', 'Saya menikmati hal-hal yang sedang saya lakukan'),
+(8, '8', 'Saya menyadari jika saya kehilangan kendali untuk bertindak, berbicara,\r\nberpikir, merasakan, atau mengingat'),
+(9, '9', 'Saya merasa sangat sedih dan tertekan'),
+(10, '10', 'Saya merasa dicintai dan dibutuhkan'),
+(11, '11', 'Saya merasa penuh kecemasan'),
+(12, '12', 'Saya berharap memiliki hari yang menarik atau menyenangkan saat bangun di\r\npagi hari\r\n'),
+(13, '13', 'Saya merasa tegang atau penuh emosi'),
+(14, '14', 'Saya mampu mengendalikan perilaku, pikiran, emosi atau perasaan saya\r\ndengan penuh kesadaran'),
+(15, '15', 'Tangan saya pernah gemetar ketika sedang mencoba melakukan sesuatu'),
+(16, '16', 'Saya merasa bahwa tidak ada sesuatu yang saya inginkan'),
+(17, '17', 'Saya merasa tenang dan damai'),
+(18, '18', 'Saya merasa bahwa emosi saya stabil'),
+(19, '19', 'Saya merasa murung dan sedih'),
+(20, '20', 'Saya merasa ingin menangis'),
+(21, '21', 'Saya merasa bahwa orang lain akan merasa lebih baik apabila saya meninggal'),
+(22, '22', 'Saya dapat merasa santai dengan mudah'),
+(23, '23', 'Saya merasa bahwa hubungan cinta saya penuh dengan perasaan mencintai dan dicintai'),
+(24, '24', 'Saya merasa bahwa segala sesuatu yang terjadi tidak sesuai dengan keinginan\r\nsaya'),
+(25, '25', 'Saya terganggu oleh rasa gelisah, atau kebingungan'),
+(26, '26', 'Saya merasa bahwa hidup adalah suatu pengalaman yang amat menarik dan\r\nmenyenangkan'),
+(27, '27', 'Saya merasa sangat sedih sehingga tidak ada yang dapat menghibur saya'),
+(28, '28', 'Saya berpikir untuk mengakhiri hidup saya'),
+(29, '29', 'Saya merasa gelisah, tidak tenang atau tidak sabar'),
+(30, '30', 'Saya menjadi murung atau merenung karena suatu hal'),
+(31, '31', 'Saya gembira dan bersenang hati'),
+(32, '32', 'Saya mengalami kebingungan, marah atau gugup'),
+(33, '33', 'Saya merasa khawatir'),
+(34, '34', 'Saya bahagia'),
+(35, '35', 'Saya mencoba untuk menenangkan diri'),
+(36, '36', 'Saya merasa kurang bersemangat'),
+(37, '37', 'Saya merasa segar dan bugar ketika bangun tidur'),
+(38, '38', 'Saya berada dalam keadaan tegang, stres atau tertekan');
 
 -- --------------------------------------------------------
 
@@ -194,7 +196,7 @@ CREATE TABLE `user` (
   `password` varchar(60) NOT NULL,
   `asal_sekolah` varchar(255) NOT NULL,
   `role` enum('admin','user') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -230,9 +232,7 @@ ALTER TABLE `gambar_artikel`
 -- Indexes for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  ADD PRIMARY KEY (`id_jawaban`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_kuisioner` (`id_kuisioner`);
+  ADD PRIMARY KEY (`id_jawaban`);
 
 --
 -- Indexes for table `kategori`
@@ -278,7 +278,7 @@ ALTER TABLE `gambar_artikel`
 -- AUTO_INCREMENT for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  MODIFY `id_jawaban` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -324,8 +324,7 @@ ALTER TABLE `gambar_artikel`
 -- Constraints for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  ADD CONSTRAINT `jawaban_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `jawaban_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuisioner` (`id_kuisioner`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `jawaban_ibfk_1` FOREIGN KEY (`id_jawaban`) REFERENCES `user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
