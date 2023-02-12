@@ -26,12 +26,13 @@
 				</script>
 			";
 		}
-		else if ($Username == $GetData['username'] && $Password == $GetData['password']) {
+		else if ($Username == $GetData['username'] && $Password == $GetData['password'] && ($GetData['role'] == 'admin')) {
 			$_SESSION['username'] = $Username;
 			$_SESSION['password'] = $Password;
       $_SESSION['User'] = $GetData['username'];
       $_SESSION['Pass'] = $GetData['password'];
 			$_SESSION['Name'] = $GetData['name'];
+			$_SESSION['Role'] = $GetData['role'];
 
 			echo "
 				<script>

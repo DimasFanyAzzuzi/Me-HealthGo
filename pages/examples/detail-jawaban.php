@@ -1,4 +1,5 @@
 <?php
+  require('koneksi.php');
   session_start();
   if (!isset($_SESSION['Name'])) {
     echo "
@@ -9,6 +10,7 @@
     ";
   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -50,6 +52,7 @@
   <!-- Icons -->
   <link rel="stylesheet" href="../../assets/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="../../assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="../../assets/css/argon.min23cd.css?v=1.2.1" type="text/css">
   <!-- Google Tag Manager -->
@@ -78,7 +81,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- Sidenav -->
   <?php
-    include 'navbar.php'
+    include 'navbar.php';
   ?>
   <!-- Main content -->
   <div class="main-content" id="panel">
@@ -89,64 +92,136 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Daftar Jawaban</h6>
+              <h6 class="h2 text-white d-inline-block mb-0">Detail Jawaban</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="dashboard"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item">Daftar Jawaban</li>
-                  <li class="breadcrumb-item active" aria-current="page">Daftar Jawaban</li>
+                  <li class="breadcrumb-item"><a href="../examples/dashboard"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="daftar-jawaban">Daftar Jawaban</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Detail Jawaban</li>
                 </ol>
               </nav>
+            </div>
+            <div class="col-lg-6 col-5 text-right">
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Page content -->
-      <div class="card">
-        <!-- Card header -->
-        <div class="card-header border-0">
-          <div class="row">
-            <div class="col-6">
-              <h3 class="mb-0">Data Jawaban</h3>
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2">
+          <div class="card card-profile">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="../../assets/img/brand/dark me.jpg" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center">
+                    <div>
+                    <span class="heading">
+                      <?php
+                          include 'koneksi.php';
+
+                          $GetTable = mysqli_query($koneksi, "SELECT COUNT(id_artikel) AS CountData FROM artikel");
+                          $GetData = mysqli_fetch_array($GetTable);
+                          $GetCount = $GetData['CountData'];
+
+                          echo $GetCount;
+                      ?>
+                      </span>
+                      <span class="description">Artikel</span>
+                    </div>
+                    <div>
+                    <span class="heading">
+                      <?php
+                          include 'koneksi.php';
+
+                          $GetTable1 = mysqli_query($koneksi, "SELECT COUNT(id_konsultan) AS CountData FROM konsultan");
+                          $GetData = mysqli_fetch_array($GetTable1);
+                          $GetCount1 = $GetData['CountData'];
+
+                          echo $GetCount1;
+                      ?>
+                      </span>
+                      <span class="description">Konsultan</span>
+                    </div>
+                    <div>
+                    <span class="heading">
+                      <?php
+                          include 'koneksi.php';
+
+                          $GetTable2 = mysqli_query($koneksi, "SELECT COUNT(id_user) AS CountData FROM user");
+                          $GetData = mysqli_fetch_array($GetTable2);
+                          $GetCount2 = $GetData['CountData'];
+
+                          echo $GetCount2;
+                      ?>
+                      </span>
+                      <span class="description">User</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h5 class="h3">
+                  Me<span class="font-weight-light">~HealthGo</span>
+                </h5>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>Jl. DR. Soebandi No.124, Krajan, Kec. Patrang
+                </div>
+                <div class="h5 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>Kabupaten Jember, Jawa Timur 68111
+                </div>
+                <div>
+                  <i class="ni education_hat mr-2"></i>RSD Dr. Soebandi
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Light table -->
-        <div class="table-responsive">
-          <table class="table align-items-center table-flush">
-            <thead class="thead-light">
-              <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Nilai</th>
-                <th>Hasil</th>
-              </tr>
-            </thead>
-            <tbody>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Detail Jawaban </h3>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
             <?php
-        require "../examples/koneksi.php";
-        $Number = 1;
-        $GetTable = mysqli_query($koneksi, "SELECT jawaban.*, user.name FROM jawaban INNER JOIN user ON jawaban.id_user = user.id_user");
-        while ($GetData = mysqli_fetch_array($GetTable)) {
-            echo "
-                <tr>
-                    <td>" . $Number++ . "</td>
-                    <td>$GetData[name]</td>
-                    <td>$GetData[nilai]</td>
-                    <td>$GetData[hasil]</td>
-                    <td>
-                    <a href='detail-jawaban?id_jawaban=$GetData[id_jawaban]'class='table-action' data-toggle='tooltip' data-original-title='Detail Jawaban'>
-                    <i class='fas fa-info-circle'></i>
-                    </a>
-                    </td>
-                </tr>
-              ";
-              }
-              
-              ?>
-            </tbody>
-          </table>
+              $id = $_GET['id_jawaban'];
+
+              $SelectData = mysqli_query($koneksi, "SELECT * FROM jawaban WHERE id_jawaban = '$id'");
+              $GetData = mysqli_fetch_array($SelectData);
+            ?>
+              <form action="update-data-artikel" method="POST" enctype="multipart/form-data" autocomplete="OFF"> 
+                <input type="hidden" name="id_jawaban" value="<?php echo $id; ?>"></input>
+                <h6 class="heading-small text-muted mb-4">Data Jawaban</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <?php
+                        echo $GetData['detail_jawaban']
+                        ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
