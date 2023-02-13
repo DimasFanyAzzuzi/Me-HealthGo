@@ -4,8 +4,10 @@
    $id = $_POST['id_konsultan'];
    $InputNam = $_POST['nama'];
    $InputHp = $_POST['noHp'];
+   $InputPek = $_POST['pekerjaan'];
+   $InputAm = $_POST['alamat'];
 
-   if (empty($InputNam) || empty($InputHp)) {
+   if (empty($InputNam) || empty($InputHp) || empty($InputPek) || empty($InputAm)) {
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
@@ -14,7 +16,7 @@
       ";
    }
    else {
-      mysqli_query($koneksi, "UPDATE konsultan SET nama = '$InputNam', noHp = '$InputHp' where id_konsultan = '$id'");
+      mysqli_query($koneksi, "UPDATE konsultan SET nama = '$InputNam', noHp = '$InputHp', pekerjaan = '$InputPek', alamat = '$InputAm' where id_konsultan = '$id'");
       echo "
 				<script>
 					setTimeout(function() { 

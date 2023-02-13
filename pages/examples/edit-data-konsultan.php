@@ -217,6 +217,21 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <label class="form-control-label" for="input-email">Pekerjaan</label>
+                            <input type="text" id="input-email" class="form-control" name="pekerjaan" placeholder="Isi Nomor Handphone" value="<?php echo $GetData['pekerjaan']; ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="pl-lg-1">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-email">Alamat</label>
+                            <input type="text" id="input-email" class="form-control" name="alamat" placeholder="Isi Nama" value="<?php echo $GetData['alamat']; ?>">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
                             <label class="form-control-label" for="input-email">No. Handphone</label>
                             <input type="text" id="input-email" class="form-control" name="noHp" placeholder="Isi Nomor Handphone" value="<?php echo $GetData['noHp']; ?>">
                         </div>

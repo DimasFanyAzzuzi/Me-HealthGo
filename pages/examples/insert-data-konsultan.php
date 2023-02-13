@@ -3,6 +3,8 @@
    // Input text KodeBIO, Nama, dan Jenis Kelamin
    $InputNam = $_POST['nama'];
    $InputHp = $_POST['noHp'];
+   $InputPek = $_POST['pekerjaan'];
+   $InputAm = $_POST['alamat'];
 
    // Input File
    $ChooseFoto = strtolower($_FILES['imageUrl']['name']); // Mengambil nama file
@@ -24,7 +26,7 @@
    $SetUniqName .= "-"; // Menggabungkan kode bio dengan tanda (-)
    $SetUniqName .= $ChooseFoto; // Menggabungkan kode bio dan tanda (-) dengan nama file
 
-   if (empty($InputNam) || empty($InputHp)) {
+   if (empty($InputNam) || empty($InputHp) || empty($InputPek) || empty($InputAm)) {
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
@@ -58,7 +60,7 @@
    }
    else {
       move_uploaded_file($Patch, $MoveTO.$SetUniqName);
-      mysqli_query($koneksi, "INSERT INTO konsultan (nama, noHp, imageUrl) VALUES ('$InputNam', '$InputHp', '$SetUniqName')");
+      mysqli_query($koneksi, "INSERT INTO konsultan (nama, noHp, pekerjaan, alamat, imageUrl) VALUES ('$InputNam', '$InputHp', '$InputPek', '$InputAm', '$SetUniqName')");
       echo "
 				<script>
 					setTimeout(function() { 

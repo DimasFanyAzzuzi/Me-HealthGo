@@ -210,8 +210,23 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <label class="form-control-label" for="input-email">Pekerjaan</label>
+                            <input type="text" id="input-email" class="form-control" name="pekerjaan" placeholder="Isi Pekerjaan saat ini">
+                    </div>
+                  </div>
+                </div>
+                <div class="pl-lg-1">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-email">Alamat</label>
+                            <input type="text" id="input-email" class="form-control" name="alamat" placeholder="Isi Alamat">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
                             <label class="form-control-label" for="input-email">No. Handphone</label>
-                            <input type="text" id="input-email" class="form-control" name="noHp" placeholder="Isi Nomor Handphone">
+                            <input type="text" id="input-email" class="form-control" name="noHp" placeholder="Isi Nomor Handphone Whatsapp">
                     </div>
                   </div>
                 </div>

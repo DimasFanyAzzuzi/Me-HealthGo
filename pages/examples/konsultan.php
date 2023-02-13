@@ -123,6 +123,8 @@
                 <th>No</th>
                 <th>Foto</th>
                 <th>Nama</th>
+                <th>Pekerjaan</th>
+                <th>Alamat</th>
                 <th>No Handphone</th>
                 <th>Opsi</th>
               </tr>
@@ -138,6 +140,8 @@
                     <td>" . $Number++ . "</td>
                     <td><img src='../../assets/img/img-kons/$GetData[imageUrl]' class='avatar rounded-circle mr-3'></td>
                     <td>$GetData[nama]</td>
+                    <td>$GetData[pekerjaan]</td>
+                    <td>$GetData[alamat]</td>
                     <td>$GetData[noHp]</td>
                     <td>
                     <a href='edit-data-konsultan?id_konsultan=$GetData[id_konsultan]'class='table-action' data-toggle='tooltip' data-original-title='Edit Data'>
