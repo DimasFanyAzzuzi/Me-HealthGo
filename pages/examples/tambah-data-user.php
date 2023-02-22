@@ -176,13 +176,13 @@
                   Me<span class="font-weight-light">~HealthGo</span>
                 </h5>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i>Jl. DR. Soebandi No.124, Krajan, Kec. Patrang
+                  <i class="ni location_pin mr-2"></i>Jl. dr. Soebandi No.99, Kec. Patrang
                 </div>
                 <div class="h5 mt-4">
                   <i class="ni business_briefcase-24 mr-2"></i>Kabupaten Jember, Jawa Timur 68111
                 </div>
                 <div>
-                  <i class="ni education_hat mr-2"></i>RSD Dr. Soebandi
+                  <i class="ni education_hat mr-2"></i>Universitas dr. Soebandi
                 </div>
               </div>
             </div>
@@ -210,28 +210,50 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Username</label>
-                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username">
+                        <label for="Nama">Jenis Kelamin*</label>
+										    <select name="jenis_kelamin" class="custom-select">
+                          <option value="">- Pilih jenis kelamin -</option>
+                          <option value="Laki-laki">Laki-laki</option>
+                          <option value="Perempuan">Perempuan</option>
+										    </select>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="pl-lg-4">
                   <div class="row">
-                  <div class="col-lg-6">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Username</label>
+                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Password</label>
                         <input type="text" id="input-email" class="form-control" name="password" placeholder="Isi Password">
                       </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Asal Sekolah</label>
+                        <input type="text" id="input-email" class="form-control" name="asal_sekolah" placeholder="Isi Asal Sekolah">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
                         <label for="Nama">Role*</label>
-                            <select name="role" class="custom-select">
-                                <option value="">- Pilih Role -</option>
-                                <option value="admin">admin</option>
-                                <option value="user">user</option>
-                            </select>
+                          <select name="role" class="custom-select">
+                              <option value="">- Pilih Role -</option>
+                              <option value="admin">admin</option>
+                              <option value="user">user</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Umur</label>
+                        <input type="number" id="input-email" class="form-control" name="umur" placeholder="Isi Umur">
                       </div>
                     </div>
                   </div>

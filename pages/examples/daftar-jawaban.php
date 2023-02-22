@@ -121,6 +121,7 @@
                 <th>Nama</th>
                 <th>Nilai</th>
                 <th>Hasil</th>
+                <th>Opsi</th>
               </tr>
             </thead>
             <tbody>

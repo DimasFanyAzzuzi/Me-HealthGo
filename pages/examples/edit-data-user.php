@@ -176,13 +176,13 @@
                   Me<span class="font-weight-light">~HealthGo</span>
                 </h5>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i>Jl. DR. Soebandi No.124, Krajan, Kec. Patrang
+                  <i class="ni location_pin mr-2"></i>Jl. dr. Soebandi No.99, Kec. Patrang
                 </div>
                 <div class="h5 mt-4">
                   <i class="ni business_briefcase-24 mr-2"></i>Kabupaten Jember, Jawa Timur 68111
                 </div>
                 <div>
-                  <i class="ni education_hat mr-2"></i>RSD Dr. Soebandi
+                  <i class="ni education_hat mr-2"></i>Universitas dr. Soebandi
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@
               <h6 class="heading-small text-muted mb-4">Data User</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                  <div class="col-lg-6">
+                    <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Nama</label>
                         <input type="text" id="input-email" class="form-control" name="name" placeholder="Isi Nama" value="<?php echo $GetData['name']; ?>">
@@ -217,22 +217,38 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Username</label>
-                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username" value="<?php echo $GetData['username']; ?>">
+                        <label for="Nama">Jenis Kelamin*</label>
+										    <select name="jenis_kelamin" class="custom-select">
+                          <option value="">- Pilih jenis kelamin -</option>
+                          <option value="Laki-laki" <?php if($GetData['jenis_kelamin'] == 'Laki-laki') {echo"selected";} ?>>Laki-laki</option>
+                          <option value="Perempuan" <?php if($GetData['jenis_kelamin'] == 'Perempuan') {echo"selected";} ?>>Perempuan</option>
+										    </select>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="pl-lg-4">
                   <div class="row">
-                  <div class="col-lg-6">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Username</label>
+                        <input type="text" id="input-email" class="form-control" name="username" placeholder="Isi Username" value="<?php echo $GetData['username']; ?>">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Password</label>
                         <input type="text" id="input-email" class="form-control" name="password" placeholder="Isi Password" value="<?php echo $GetData['password']; ?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Asal Sekolah</label>
+                        <input type="text" id="input-email" class="form-control" name="asal_sekolah" placeholder="Isi Asal Sekolah" value="<?php echo $GetData['asal_sekolah']; ?>">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
                         <label for="Nama">Role</label>
                             <select name="role" class="custom-select">
                                 <option value="">- Pilih Role -</option>
@@ -241,11 +257,17 @@
                             </select>
                       </div>
                     </div>
+                    <div class="col-lg-3">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Umur</label>
+                        <input type="number" id="input-email" class="form-control" name="umur" placeholder="Isi Umur" value="<?php echo $GetData['umur']; ?>">
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <hr class="my-4" />
                     <div class="col-lg-12 col-5 text-right">
-                      <button class="btn btn-outline-success" type="submit">Simpan Data</button>
+                      <button class="btn btn-outline-success" type="submit">Perbarui Data</button>
                     </div>
               </form>
             </div>

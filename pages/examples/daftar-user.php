@@ -122,6 +122,9 @@
               <tr>
                 <th>No</th>
                 <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Umur</th>
+                <th>Asal Sekolah</th>
                 <th>Username</th>
                 <th>Password</th>
                 <th>Role</th>
@@ -138,6 +141,9 @@
                 <tr>
                     <td>" . $Number++ . "</td>
                     <td>$GetData[name]</td>
+                    <td>$GetData[jenis_kelamin]</td>
+                    <td>$GetData[umur]</td>
+                    <td>$GetData[asal_sekolah]</td>
                     <td>$GetData[username]</td>
                     <td>$GetData[password]</td>
                     <td>$GetData[role]</td>

@@ -95,6 +95,14 @@
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
+              <a class="nav-link" href="laporan">
+                <i class="ni ni-check-bold"></i>
+                <span class="nav-link-text">Laporan</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-md-3">
+            <li class="nav-item">
               <a class="nav-link" href="logout.php">
                 <i class="ni ni-user-run"></i>
                 <span class="nav-link-text">Log Out</span>

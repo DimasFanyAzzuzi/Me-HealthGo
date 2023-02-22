@@ -176,13 +176,13 @@
                   Me<span class="font-weight-light">~HealthGo</span>
                 </h5>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i>Jl. DR. Soebandi No.124, Krajan, Kec. Patrang
+                  <i class="ni location_pin mr-2"></i>Jl. dr. Soebandi No.99, Kec. Patrang
                 </div>
                 <div class="h5 mt-4">
                   <i class="ni business_briefcase-24 mr-2"></i>Kabupaten Jember, Jawa Timur 68111
                 </div>
                 <div>
-                  <i class="ni education_hat mr-2"></i>RSD Dr. Soebandi
+                  <i class="ni education_hat mr-2"></i>Universitas dr. Soebandi
                 </div>
               </div>
             </div>

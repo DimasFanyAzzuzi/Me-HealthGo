@@ -4,11 +4,14 @@
       // Input text KodeBIO, Nama, dan Jenis Kelamin
       $id = $_POST['id_user'];
       $InputNam = $_POST['name'];
+      $InputJk = $_POST['jenis_kelamin'];
+      $InputUm = $_POST['umur'];
+      $InputAs = $_POST['asal_sekolah'];
       $InputUs = $_POST['username'];
       $InputPs = md5($_POST['password']);
       $InputR = $_POST['role'];
       
-   if (empty($InputNam) || empty($InputUs) || empty($InputPs) || empty($InputR)) {
+   if (empty($InputNam) || empty($InputJk) || empty($InputUm) || empty($InputAs) || empty($InputUs) || empty($InputPs) || empty($InputR)) {
          echo "
             <script>
                alert('Mohon lengkapi seluruh data!');
@@ -17,7 +20,7 @@
          ";
       }
       else {
-         mysqli_query($koneksi, "UPDATE user SET username = '$InputUs', name = '$InputNam', password = '$InputPs', role = '$InputR' where id_user = '$id'");
+         mysqli_query($koneksi, "UPDATE user SET username = '$InputUs', jenis_kelamin = '$InputJk', umur = '$InputUm', asal_sekolah = '$InputAs', name = '$InputNam', password = '$InputPs', role = '$InputR' where id_user = '$id'");
          echo "
                <script>
                   setTimeout(function() { 

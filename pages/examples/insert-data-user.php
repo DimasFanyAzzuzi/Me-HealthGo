@@ -2,11 +2,14 @@
    require "koneksi.php";
    // Input text KodeBIO, Nama, dan Jenis Kelamin
    $InputNam = $_POST['name'];
+   $InputJk = $_POST['jenis_kelamin'];
+   $InputUm = $_POST['umur'];
+   $InputAs = $_POST['asal_sekolah'];
    $InputUs = $_POST['username'];
    $InputPs = md5($_POST['password']);
    $InputR = $_POST['role'];
 
-   if (empty($InputNam) || empty($InputUs) || empty($InputPs) || empty($InputR)) {
+   if (empty($InputNam) || empty($InputJk) || empty($InputUm) || empty($InputAs) || empty($InputUs) || empty($InputPs) || empty($InputR)) {
       echo "
          <script>
             alert('Mohon lengkapi seluruh data!');
@@ -40,7 +43,7 @@
    // }
    
    else {
-      mysqli_query($koneksi, "INSERT INTO user (username, name, password, role) VALUES ('$InputUs','$InputNam','$InputPs','$InputR')");
+      mysqli_query($koneksi, "INSERT INTO user (username, jenis_kelamin, umur, asal_sekolah, name, password, role) VALUES ('$InputUs','$InputJk','$InputUm','$InputAs','$InputNam','$InputPs','$InputR')");
       echo "
 				<script>
 					setTimeout(function() { 
