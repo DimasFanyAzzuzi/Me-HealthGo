@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2023 at 01:27 PM
+-- Generation Time: Feb 22, 2023 at 06:09 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -83,7 +83,9 @@ CREATE TABLE `jawaban` (
 --
 
 INSERT INTO `jawaban` (`id_jawaban`, `id_user`, `detail_jawaban`, `nilai`, `hasil`) VALUES
-(1, 5, '[{kuis: 1 | nilai: 4}, {kuis: 2 | nilai: 3}]', 7, 'Tidak Mengalami Depresi');
+(455, 5, '[\"{kuis: 1 | nilai: 1}\",\"{kuis: 2 | nilai: 3}\",\"{kuis: 3 | nilai: 3}\",\"{kuis: 4 | nilai: 3}\",\"{kuis: 5 | nilai: 2}\",\"{kuis: 6 | nilai: 2}\",\"{kuis: 7 | nilai: 3}\",\"{kuis: 8 | nilai: 3}\",\"{kuis: 9 | nilai: 4}\",\"{kuis: 10 | nilai: 3}\",\"{kuis: 11 | nilai: 4}\",\"{kuis: 12 | nilai: 4}\",\"{kuis: 13 | nilai: 3}\",\"{kuis: 14 | nilai: 3}\",\"{kuis: 15 | nilai: 3}\",\"{kuis: 16 | nilai: 2}\",\"{kuis: 17 | nilai: 3}\",\"{kuis: 18 | nilai: 4}\",\"{kuis: 19 | nilai: 4}\",\"{kuis: 20 | nilai: 3}\",\"{kuis: 21 | nilai: 3}\",\"{kuis: 22 | nilai: 3}\",\"{kuis: 23 | nilai: 3}\",\"{kuis: 24 | nilai: 3}\",\"{kuis: 25 | nilai: 3}\",\"{kuis: 26 | nilai: 3}\",\"{kuis: 27 | nilai: 4}\",\"{kuis: 28 | nilai: 4}\",\"{kuis: 29 | nilai: 3}\",\"{kuis: 30 | nilai: 2}\",\"{kuis: 31 | nilai: 3}\",\"{kuis: 32 | nilai: 3}\",\"{kuis: 33 | nilai: 3}\",\"{kuis: 34 | nilai: 3}\",\"{kuis: 35 | nilai: 3}\",\"{kuis: 36 | nilai: 3}\",\"{kuis: 37 | nilai: 3}\",\"{kuis: 38 | nilai: 3}\"]', 115, 'Mengalami depresi'),
+(456, 5, '[\"{kuis: 1 | nilai: 5}\",\"{kuis: 4 | nilai: 4}\",\"{kuis: 38 | nilai: 5}\",\"{kuis: 37 | nilai: 3}\",\"{kuis: 36 | nilai: 4}\",\"{kuis: 2 | nilai: 4}\",\"{kuis: 3 | nilai: 4}\",\"{kuis: 5 | nilai: 3}\",\"{kuis: 6 | nilai: 3}\",\"{kuis: 7 | nilai: 3}\",\"{kuis: 8 | nilai: 3}\",\"{kuis: 9 | nilai: 3}\",\"{kuis: 10 | nilai: 3}\",\"{kuis: 11 | nilai: 3}\",\"{kuis: 12 | nilai: 3}\",\"{kuis: 13 | nilai: 3}\",\"{kuis: 14 | nilai: 3}\",\"{kuis: 15 | nilai: 3}\",\"{kuis: 16 | nilai: 3}\",\"{kuis: 17 | nilai: 3}\",\"{kuis: 18 | nilai: 3}\",\"{kuis: 19 | nilai: 3}\",\"{kuis: 20 | nilai: 3}\",\"{kuis: 21 | nilai: 3}\",\"{kuis: 22 | nilai: 3}\",\"{kuis: 23 | nilai: 3}\",\"{kuis: 24 | nilai: 3}\",\"{kuis: 25 | nilai: 3}\",\"{kuis: 26 | nilai: 3}\",\"{kuis: 27 | nilai: 3}\",\"{kuis: 28 | nilai: 3}\",\"{kuis: 29 | nilai: 3}\",\"{kuis: 30 | nilai: 3}\",\"{kuis: 31 | nilai: 3}\",\"{kuis: 32 | nilai: 3}\",\"{kuis: 33 | nilai: 3}\",\"{kuis: 34 | nilai: 3}\",\"{kuis: 35 | nilai: 3}\"]', 122, 'Mengalami depresi'),
+(457, 5, '[\"{kuis: 1 | nilai: 5}\",\"{kuis: 4 | nilai: 4}\",\"{kuis: 38 | nilai: 5}\",\"{kuis: 37 | nilai: 3}\",\"{kuis: 36 | nilai: 4}\",\"{kuis: 2 | nilai: 4}\",\"{kuis: 3 | nilai: 4}\",\"{kuis: 5 | nilai: 3}\",\"{kuis: 6 | nilai: 3}\",\"{kuis: 7 | nilai: 3}\",\"{kuis: 8 | nilai: 3}\",\"{kuis: 9 | nilai: 3}\",\"{kuis: 10 | nilai: 3}\",\"{kuis: 11 | nilai: 3}\",\"{kuis: 12 | nilai: 3}\",\"{kuis: 13 | nilai: 3}\",\"{kuis: 14 | nilai: 3}\",\"{kuis: 15 | nilai: 3}\",\"{kuis: 16 | nilai: 3}\",\"{kuis: 17 | nilai: 3}\",\"{kuis: 18 | nilai: 3}\",\"{kuis: 19 | nilai: 3}\",\"{kuis: 20 | nilai: 3}\",\"{kuis: 21 | nilai: 3}\",\"{kuis: 22 | nilai: 3}\",\"{kuis: 23 | nilai: 3}\",\"{kuis: 24 | nilai: 3}\",\"{kuis: 25 | nilai: 3}\",\"{kuis: 26 | nilai: 3}\",\"{kuis: 27 | nilai: 3}\",\"{kuis: 28 | nilai: 3}\",\"{kuis: 29 | nilai: 3}\",\"{kuis: 30 | nilai: 3}\",\"{kuis: 31 | nilai: 3}\",\"{kuis: 32 | nilai: 3}\",\"{kuis: 33 | nilai: 3}\",\"{kuis: 34 | nilai: 3}\",\"{kuis: 35 | nilai: 3}\"]', 0, 'Tidak mengalami depresi');
 
 -- --------------------------------------------------------
 
@@ -234,7 +236,10 @@ ALTER TABLE `gambar_artikel`
 -- Indexes for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  ADD PRIMARY KEY (`id_jawaban`);
+  ADD PRIMARY KEY (`id_jawaban`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_user_2` (`id_user`),
+  ADD KEY `id_user_3` (`id_user`);
 
 --
 -- Indexes for table `kategori`
@@ -280,7 +285,7 @@ ALTER TABLE `gambar_artikel`
 -- AUTO_INCREMENT for table `jawaban`
 --
 ALTER TABLE `jawaban`
-  MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=478;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -321,12 +326,6 @@ ALTER TABLE `artikel`
 --
 ALTER TABLE `gambar_artikel`
   ADD CONSTRAINT `gambar_artikel_ibfk_1` FOREIGN KEY (`id_artikel`) REFERENCES `artikel` (`id_artikel`);
-
---
--- Constraints for table `jawaban`
---
-ALTER TABLE `jawaban`
-  ADD CONSTRAINT `jawaban_ibfk_1` FOREIGN KEY (`id_jawaban`) REFERENCES `user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

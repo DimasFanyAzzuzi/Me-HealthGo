@@ -113,50 +113,77 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-0">Data Laporan</h3>
-              <p class="text-sm mb-0">
-                Mencetak Laporan Data Jawaban Kuis
-              </p>
+              <div class="row">
+              <div class="col-md-6">
+                <h3 class="mb-0">Data Laporan</h3>
+                <p class="text-sm mb-0">
+                  Mencetak Laporan Data Jawaban Kuis
+                </p>
+              </div>
+                <div class="col-md-6 text-right">
+                  <button class="btn btn-success" onclick="ExportToExcel('xlsx')">Export to Excel</button>
+                </div>
+              </div>
             </div>
+            <?php
+              require "../examples/koneksi.php";
+              $getcount = mysqli_query($koneksi, "SELECT COUNT(id_kuisioner) AS totaldata FROM kuisioner");
+              $getdata = mysqli_fetch_array($getcount);
+              $column = $getdata['totaldata'];
+              $numbercol = 1;
+            ?>
             <div class="table-responsive py-4">
               <table class="table table-flush" id="datatable-buttons">
                 <thead class="thead-light">
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Jawaban</th>
+                    <?php 
+                      for ($i=1; $i <= $column; $i++) { 
+                          echo "<th>Soal " . $numbercol++ . "</th>";
+                      }
+                    ?>
                     <th>Nilai</th>
                     <th>Hasil</th>
                   </tr>
                 </thead>
+                <tbody>
+                <?php
+                  $Number = 1;
+                  $GetTable = mysqli_query($koneksi, "SELECT jawaban.*, user.name FROM jawaban INNER JOIN user ON jawaban.id_user = user.id_user");
+                  while ($GetData = mysqli_fetch_array($GetTable)) {
+                    $jawaban = $GetData['detail_jawaban'];
+                    $separate = preg_replace("/[^a-zA-Z0-9:|,]/", "", $jawaban);
+                    $result = explode(",", $separate);
+                  ?>
+                    <tr>
+                        <td><?= $Number++ ?></td>
+                        <td><?= $GetData['name'] ?></td>
+                        <?php 
+                          for ($a=0; $a < $column; $a++) {
+                            echo "<td>". $result[$a] ."</td>";
+                          }
+                        ?>
+                        <td><?= $GetData['nilai'] ?></td>
+                        <td><?= $GetData['hasil'] ?></td>
+                    </tr>
+                  <?php
+                  }
+                ?>
+                </tbody>
                 <tfoot>
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Jawaban</th>
+                    <?php 
+                      for ($i=1; $i <= $column; $i++) { 
+                          echo "<th>Soal " . $i . "</th>";
+                      }
+                    ?>
                     <th>Nilai</th>
                     <th>Hasil</th>
                   </tr>
                 </tfoot>
-                <tbody>
-                <?php
-        require "../examples/koneksi.php";
-        $Number = 1;
-        $GetTable = mysqli_query($koneksi, "SELECT jawaban.*, user.name FROM jawaban INNER JOIN user ON jawaban.id_user = user.id_user");
-        while ($GetData = mysqli_fetch_array($GetTable)) {
-            echo "
-                <tr>
-                    <td>" . $Number++ . "</td>
-                    <td>$GetData[name]</td>
-                    <td>$GetData[detail_jawaban]</td>
-                    <td>$GetData[nilai]</td>
-                    <td>$GetData[hasil]</td>
-                </tr>
-              ";
-              }
-              
-              ?>
-                </tbody>
               </table>
             </div>
           </div>
@@ -209,6 +236,23 @@
 
     } catch (err) {
       console.log('Facebook Track Error:', err);
+    }
+  </script>
+  <script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+  <script>
+    function ExportToExcel(type, fn, dl) {
+        var elt = document.getElementById('datatable-buttons');
+        var wb = XLSX.utils.table_to_book(elt, {
+          sheet: "sheet1",
+          dateNF: 'dd-mm-yyyy'
+        });
+        return dl ?
+        XLSX.write(wb, {
+          bookType: type,
+          bookSST: true,
+          type: 'base64'
+        }) :
+        XLSX.writeFile(wb, fn || ('Report Data Pengisian Kuisioner.' + (type || 'xlsx')));
     }
   </script>
   <noscript>
