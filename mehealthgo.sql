@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 11, 2023 at 10:26 PM
+-- Generation Time: Feb 22, 2023 at 01:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -193,6 +193,8 @@ CREATE TABLE `user` (
   `id_user` int(4) NOT NULL,
   `username` varchar(60) NOT NULL,
   `name` varchar(60) NOT NULL,
+  `jenis_kelamin` varchar(9) NOT NULL,
+  `umur` varchar(3) NOT NULL,
   `password` varchar(60) NOT NULL,
   `asal_sekolah` varchar(255) NOT NULL,
   `role` enum('admin','user') NOT NULL
@@ -202,13 +204,13 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `name`, `password`, `asal_sekolah`, `role`) VALUES
-(1, 'admin', 'Admin Me-HealthGo', '21232f297a57a5a743894a0e4a801fc3', '', 'admin'),
-(3, 'dimas', 'dimas', '81dc9bdb52d04dc20036dbd8313ed055', '', 'user'),
-(4, 'mahfud', 'mahfud', '1234', '', 'user'),
-(5, 'bahrul@gmail.com', 'Moh Bahrul Ulum', '81dc9bdb52d04dc20036dbd8313ed055', '', 'user'),
-(7, 'Dimas Fany Azzuzi ', 'dimas', '4abf6b9b55aa45ef1e1200d0df5a9eb8', 'MAN 2 SITUBONDO ', 'user'),
-(8, 'uguhu', 'awaw', '5c69e64cebfa6578475dc7f68c8b4085', 'uuhhu', 'user');
+INSERT INTO `user` (`id_user`, `username`, `name`, `jenis_kelamin`, `umur`, `password`, `asal_sekolah`, `role`) VALUES
+(1, 'admin', 'Admin Me-HealthGo', '-', '-', '21232f297a57a5a743894a0e4a801fc3', '', 'admin'),
+(3, 'dimas', 'dimas', 'Laki-laki', '22', '81dc9bdb52d04dc20036dbd8313ed055', 'asdwd', 'user'),
+(4, 'mahfud', 'mahfud', 'Laki-laki', '40', '1234', 'awdawdaw', 'user'),
+(5, 'bahrul@gmail.com', 'Moh Bahrul Ulum', 'Laki-laki', '22', '81dc9bdb52d04dc20036dbd8313ed055', 'adwdwdaw', 'user'),
+(7, 'Dimas Fany Azzuzi ', 'dimas', 'Laki-laki', '21', '4abf6b9b55aa45ef1e1200d0df5a9eb8', 'MAN 2 SITUBONDO ', 'user'),
+(8, 'uguhu', 'awaw', 'Laki-laki', '22', '5c69e64cebfa6578475dc7f68c8b4085', 'uuhhu', 'user');
 
 --
 -- Indexes for dumped tables
@@ -302,7 +304,7 @@ ALTER TABLE `kuisioner`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
